@@ -1,5 +1,8 @@
 # Antigravity SEO: SEO Skill & Suite for Google Antigravity
 
+> [!NOTE]
+> **Adaptation Notice**: This project is an adaptation of [`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/claude-seo) specifically re-architected and configured for **Google Antigravity**. It routes skills directly into Antigravity's global skill discovery system (`~/.gemini/config/skills/`), adds native PowerShell/Bash Antigravity installers, and removes Claude-Code-specific plugin constraints so any Antigravity user can run the full suite natively.
+
 **Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Claude SEO](https://github.com/AgriciDaniel/claude-seo)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
 
 [![Google Antigravity Skill](https://img.shields.io/badge/Antigravity-Skill-blue)](https://github.com/ignacioFinochietti/antigravity-seo-skill)
