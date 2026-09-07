@@ -114,7 +114,7 @@ try {
 $AntigravityBase = Join-Path $env:USERPROFILE ".gemini\config"
 $SkillsDir = Join-Path $AntigravityBase "skills"
 $RulesDir = Join-Path $AntigravityBase "rules"
-$RepoUrl = "https://github.com/ignacioFinochietti/antigravity-seo"
+$RepoUrl = "https://github.com/ignacioFinochietti/antigravity-seo-skill"
 
 New-Item -ItemType Directory -Force -Path $SkillsDir | Out-Null
 New-Item -ItemType Directory -Force -Path $RulesDir | Out-Null

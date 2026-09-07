@@ -4,7 +4,7 @@ set -euo pipefail
 
 SKILLS_DIR="${HOME}/.gemini/config/skills"
 RULES_DIR="${HOME}/.gemini/config/rules"
-REPO_URL="https://github.com/ignacioFinochietti/antigravity-seo"
+REPO_URL="https://github.com/ignacioFinochietti/antigravity-seo-skill"
 
 echo "════════════════════════════════════════"
 echo "║   Antigravity SEO - Installer        ║"

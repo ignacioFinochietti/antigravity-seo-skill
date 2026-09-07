@@ -73,15 +73,15 @@ Run a full audit and watch parallel agents fan out across the site:
 ### For Google Antigravity (Windows)
 
 ```powershell
-git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo.git
-powershell -ExecutionPolicy Bypass -File antigravity-seo\install-antigravity.ps1
+git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo-skill.git
+powershell -ExecutionPolicy Bypass -File antigravity-seo-skill\install-antigravity.ps1
 ```
 
 ### For Google Antigravity (Unix / macOS / Linux)
 
 ```bash
-git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo.git
-bash antigravity-seo/install-antigravity.sh
+git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo-skill.git
+bash antigravity-seo-skill/install-antigravity.sh
 ```
 
 > **What does this do?** It installs all 25 sub-skills and specialist agents into Antigravity's global skill directory (`~/.gemini/config/skills/`), making `/seo` and all its commands directly invocable from any Antigravity conversation.
