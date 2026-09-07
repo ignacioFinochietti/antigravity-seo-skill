@@ -1,4 +1,4 @@
-# E-E-A-T Evaluation Framework
+﻿# E-E-A-T Evaluation Framework
 ## Per Google Quality Rater Guidelines (September 11, 2025); currency-checked June 2026
 
 ## Overview
@@ -8,19 +8,19 @@ E-E-A-T = **E**xperience, **E**xpertise, **A**uthoritativeness, **T**rustworthin
 **Trust is the most important member of the family** (Google's own wording);
 Experience, Expertise, and Authoritativeness support the assessment of Trust.
 E-E-A-T is a **concept in the Quality Rater Guidelines**, not a direct ranking
-score — it informs the core ranking and helpful-content systems.
+score â€” it informs the core ranking and helpful-content systems.
 
 > **No "watershed" framing.** Google never characterized the December 2025 (or
 > any 2026) core update as "extending E-E-A-T to ALL competitive queries," and
 > never published per-industry traffic-drop percentages. Those figures and the
-> "watershed" narrative are third-party SEO-blog interpretation — do not assert
+> "watershed" narrative are third-party SEO-blog interpretation â€” do not assert
 > them as Google fact. Google's only on-record description of broad core updates
 > is generic ("a regular update designed to better surface relevant, satisfying
-> content … from all types of sites").
+> content â€¦ from all types of sites").
 
 > **Continuous core updates.** Google now documents (changelog 2025-12-09) that
 > it continually makes **smaller, unannounced core updates** between the major
-> ones — so content improvements can lift rankings without waiting for the next
+> ones â€” so content improvements can lift rankings without waiting for the next
 > major update. Treat helpful-content evaluation as always-on.
 
 ## YMYL (Your Money or Your Life)
@@ -36,7 +36,7 @@ Topics requiring the **highest** E-E-A-T standards (E-E-A-T applies broadly, but
 
 ---
 
-## Experience (claude-seo internal scoring weight: 20%)
+## Experience (antigravity-seo internal scoring weight: 20%)
 
 First-hand knowledge and personal involvement with the topic.
 
@@ -56,7 +56,7 @@ First-hand knowledge and personal involvement with the topic.
 
 ---
 
-## Expertise (claude-seo internal scoring weight: 25%)
+## Expertise (antigravity-seo internal scoring weight: 25%)
 
 Formal qualifications, training, and demonstrated knowledge.
 
@@ -76,7 +76,7 @@ Formal qualifications, training, and demonstrated knowledge.
 
 ---
 
-## Authoritativeness (claude-seo internal scoring weight: 25%)
+## Authoritativeness (antigravity-seo internal scoring weight: 25%)
 
 Recognition by others as a go-to source.
 
@@ -97,7 +97,7 @@ Recognition by others as a go-to source.
 
 ---
 
-## Trustworthiness (claude-seo internal scoring weight: 30%)
+## Trustworthiness (antigravity-seo internal scoring weight: 30%)
 
 The most important factor, overall reliability and transparency.
 
@@ -140,7 +140,7 @@ Raters now formally evaluate whether content appears AI-generated:
 ### Spam Policies (updated 2026-05-15)
 - **Expired domain abuse**: Buying expired domains for their backlinks
 - **Site reputation abuse**: Using a reputable site to host low-quality content (parasite SEO)
-- **Scaled content abuse**: Mass-producing content without value — Google's policy now **explicitly** names "using generative AI tools to generate many pages without adding value" (also covers automated transformations like synonymizing/translating).
+- **Scaled content abuse**: Mass-producing content without value â€” Google's policy now **explicitly** names "using generative AI tools to generate many pages without adding value" (also covers automated transformations like synonymizing/translating).
 - **Back-button hijacking** (NEW, malicious practices): manipulating browser history (`history.pushState`/`replaceState`, including via third-party ad/library scripts) so users can't use the Back button. Announced 2026-04-13; **enforcement live since 2026-06-15** (manual actions + automated demotions).
 
 ### AI Overview Evaluation
@@ -208,3 +208,4 @@ The "Experience" dimension is a key differentiator, especially against scaled/AI
 1. Continue publishing high-quality content
 2. Monitor and respond to reputation issues
 3. Keep credentials and certifications current
+

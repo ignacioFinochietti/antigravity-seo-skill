@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-schema
 description: Schema markup expert. Detects, validates, and generates Schema.org structured data in JSON-LD format.
 model: sonnet
@@ -38,13 +38,13 @@ When analyzing pages:
 ## Validation Checklist
 
 For any schema block, verify:
-1. ✅ @context is "https://schema.org"
-2. ✅ @type is valid and not deprecated
-3. ✅ All required properties present
-4. ✅ Property values match expected types
-5. ✅ No placeholder text (e.g., "[Business Name]")
-6. ✅ URLs are absolute
-7. ✅ Dates are ISO 8601 format
+1. âœ… @context is "https://schema.org"
+2. âœ… @type is valid and not deprecated
+3. âœ… All required properties present
+4. âœ… Property values match expected types
+5. âœ… No placeholder text (e.g., "[Business Name]")
+6. âœ… URLs are absolute
+7. âœ… Dates are ISO 8601 format
 
 ## Common Schema Types
 
@@ -68,7 +68,7 @@ Provide:
 
 ## Fetching pages (v2.0.0)
 
-Use `claude-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `is_spa`, complete `extracted_text`, and `publication_date`; use `--output rendered.html` for the full HTML. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
+Use `antigravity-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `is_spa`, complete `extracted_text`, and `publication_date`; use `--output rendered.html` for the full HTML. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
 
 Use the JSON response's `structured_data` summary for routine JSON-LD detection. It is extracted from the full HTML before the HTML fields are truncated, but emits only bounded validity, size, and type metadata. When full blocks are necessary for validation, pass `--json-ld-output <path>` and read the bounded UTF-8 JSON artifact. Never copy unbounded page markup into an agent prompt.
 
@@ -80,3 +80,4 @@ If `output_dir` is provided by the audit orchestrator, write:
 - Structured JSON-compatible findings for `audit-data.json` under the Schema / Structured Data category
 
 For schema audits on SPA sites prefer `--mode always`: many sites inject JSON-LD client-side via React Helmet, Next/Head, or vue-meta, so the raw HTML will be empty of structured data even when the rendered DOM has the full graph. Compare `raw_content` vs `content` to confirm whether schema is server-rendered.
+

@@ -1,4 +1,4 @@
-# Troubleshooting
+﻿# Troubleshooting
 
 ## Common Issues
 
@@ -11,8 +11,8 @@
 For plugin installs, verify and reinstall through Claude Code:
 ```bash
 /plugin list
-/plugin marketplace add AgriciDaniel/claude-seo
-/plugin install claude-seo@agricidaniel-claude-seo
+/plugin marketplace add AgriciDaniel/antigravity-seo
+/plugin install antigravity-seo@agricidaniel-antigravity-seo
 ```
 
 For manual installs:
@@ -38,7 +38,7 @@ claude
 Caution: Prefer downloading, inspecting, then running remote scripts; the pipe-to-shell form below is the less-safe convenience option.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/install.sh | bash
 ```
 
 ---
@@ -58,8 +58,8 @@ Dependencies belong in the managed runtime. For a plugin install, run:
 
 For a manual install, run:
 ```bash
-~/.claude/skills/seo/bin/claude-seo doctor
-~/.claude/skills/seo/bin/claude-seo setup
+~/.claude/skills/seo/bin/antigravity-seo doctor
+~/.claude/skills/seo/bin/antigravity-seo setup
 ```
 
 Do not install individual packages, use `pip --user`, or create a PATH shim.
@@ -71,7 +71,7 @@ Do not install individual packages, use `pip --user`, or create a PATH shim.
 **Solution:** For plugin installs, reinstall the plugin first:
 
 ```bash
-/plugin install claude-seo@agricidaniel-claude-seo
+/plugin install antigravity-seo@agricidaniel-antigravity-seo
 ```
 
 For manual installs, requirements.txt is copied to the skill directory:
@@ -82,7 +82,7 @@ ls ~/.claude/skills/seo/requirements.txt
 
 If missing, download it directly:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/requirements.txt \
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/requirements.txt \
   -o ~/.claude/skills/seo/requirements.txt
 ```
 
@@ -130,7 +130,7 @@ chmod +x ~/.claude/skills/seo/scripts/*.py
 
 **Solution:**
 
-For plugin installs, check `/plugin list` and reinstall `claude-seo@agricidaniel-claude-seo`; subagents load from the plugin, not `~/.claude/agents/`.
+For plugin installs, check `/plugin list` and reinstall `antigravity-seo@agricidaniel-antigravity-seo`; subagents load from the plugin, not `~/.claude/agents/`.
 
 For manual installs:
 
@@ -146,7 +146,7 @@ head -5 ~/.claude/agents/seo-technical.md
 
 3. Re-install agents:
 ```bash
-cp /path/to/claude-seo/agents/*.md ~/.claude/agents/
+cp /path/to/antigravity-seo/agents/*.md ~/.claude/agents/
 ```
 
 ---
@@ -213,3 +213,4 @@ python3 ~/.claude/skills/seo/scripts/parse_html.py page.html --json
 # Test screenshot
 python3 ~/.claude/skills/seo/scripts/capture_screenshot.py https://example.com
 ```
+

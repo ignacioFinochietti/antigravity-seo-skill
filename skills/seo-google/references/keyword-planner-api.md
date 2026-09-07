@@ -1,4 +1,4 @@
-# Google Ads API - Keyword Planner Reference
+﻿# Google Ads API - Keyword Planner Reference
 
 Gold-standard source for keyword search volume. DataForSEO gets its volume data from Google Ads -- this cuts out the middleman.
 
@@ -33,7 +33,7 @@ Predict clicks, impressions, and cost for keywords.
 
 ## Configuration
 
-Add to `~/.config/claude-seo/google-api.json`:
+Add to `~/.config/antigravity-seo/google-api.json`:
 
 ```json
 {
@@ -64,3 +64,4 @@ Uses `google-ads` library (separate from `google-api-python-client`).
 - **CPC bids**: Reflect what advertisers pay, useful for estimating keyword commercial value
 - **Location targeting**: Use location IDs (2840 = United States, 2826 = United Kingdom)
 - **Language targeting**: Use language IDs (1000 = English, 1003 = Spanish)
+

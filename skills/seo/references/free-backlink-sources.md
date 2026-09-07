@@ -1,4 +1,4 @@
-# Free Backlink Data Sources
+﻿# Free Backlink Data Sources
 
 Reference for the seo-backlinks skill. Loaded on demand when analyzing backlinks
 with free sources.
@@ -7,11 +7,11 @@ with free sources.
 
 | Source | Auth | Any Domain? | Data Quality | Coverage vs Commercial | Rate Limit |
 |--------|------|-------------|-------------|----------------------|------------|
-| **Moz API** | API key (free signup) | Yes | ★★★★☆ | ~70% for DA/PA | 1 req/10s, 2,500 rows/mo |
-| **Bing Webmaster** | API key (free) | Verified sites only | ★★★☆☆ | ~15% (Bing index) | Generous |
-| **Common Crawl** | None (public) | Yes | ★★★☆☆ | ~25-40% domains | N/A |
-| **Verification Crawler** | None | Yes | ★★★★★ (binary) | N/A (checks known links) | 1 req/s per domain |
-| **DataForSEO** (paid) | API key | Yes | ★★★★★ | ~90%+ | Per plan |
+| **Moz API** | API key (free signup) | Yes | â˜…â˜…â˜…â˜…â˜† | ~70% for DA/PA | 1 req/10s, 2,500 rows/mo |
+| **Bing Webmaster** | API key (free) | Verified sites only | â˜…â˜…â˜…â˜†â˜† | ~15% (Bing index) | Generous |
+| **Common Crawl** | None (public) | Yes | â˜…â˜…â˜…â˜†â˜† | ~25-40% domains | N/A |
+| **Verification Crawler** | None | Yes | â˜…â˜…â˜…â˜…â˜… (binary) | N/A (checks known links) | 1 req/s per domain |
+| **DataForSEO** (paid) | API key | Yes | â˜…â˜…â˜…â˜…â˜… | ~90%+ | Per plan |
 
 ## Confidence Weighting
 
@@ -27,7 +27,7 @@ When merging data from multiple sources, apply confidence weights to each metric
 
 **Composite formula:**
 ```
-weighted_score = Σ(source_score × confidence × factor_weight) / Σ(confidence × factor_weight)
+weighted_score = Î£(source_score Ã— confidence Ã— factor_weight) / Î£(confidence Ã— factor_weight)
 ```
 
 When only Common Crawl is available, cap the maximum health score at 70/100 and note
@@ -37,11 +37,11 @@ When only Common Crawl is available, cap the maximum health score at 70/100 and 
 
 ### Moz API (Tier 1)
 - **Endpoint:** `https://api.moz.com/jsonrpc` (JSON-RPC 2.0)
-- **Free tier:** 2,500 rows/month, 1 request per 10 seconds (verify current limits at https://moz.com/products/api — free tier limits may change)
+- **Free tier:** 2,500 rows/month, 1 request per 10 seconds (verify current limits at https://moz.com/products/api â€” free tier limits may change)
 - **Signup:** https://moz.com/products/api (credit card required, not charged)
 - **Data:** Domain Authority (0-100), Page Authority, Spam Score (1-17%), link counts,
   referring domains, anchor text distribution
-- **Command:** `claude-seo run moz_api.py`
+- **Command:** `antigravity-seo run moz_api.py`
 - **Commands:** `metrics`, `domains`, `anchors`, `pages`
 - **Blind spots:** No link velocity, no toxic link patterns beyond Spam Score,
   3-day update lag, smaller index than Ahrefs/Semrush
@@ -54,7 +54,7 @@ When only Common Crawl is available, cap the maximum health score at 70/100 and 
   are accessible to the same API account
 - **Data:** Inbound-link source URL, target URL, anchor text, sampled link
   counts, and referring-domain comparison totals
-- **Command:** `claude-seo run bing_webmaster.py`
+- **Command:** `antigravity-seo run bing_webmaster.py`
 - **Commands:** `links`, `counts`, `compare` (comparison requires both
   properties to be registered to the same API account)
 - **Blind spots:** Only Bing-indexed pages (~15% of web), verified sites only,
@@ -65,15 +65,15 @@ When only Common Crawl is available, cap the maximum health score at 70/100 and 
 - **Releases:** Quarterly (e.g., cc-main-2025-18)
 - **No auth needed:** Public data, free to download
 - **Data:** Domain-level in-degree, PageRank, harmonic centrality, referring domains
-- **Command:** `claude-seo run commoncrawl_graph.py`
-- **Cache:** `~/.cache/claude-seo/commoncrawl/` (90-day TTL)
+- **Command:** `antigravity-seo run commoncrawl_graph.py`
+- **Cache:** `~/.cache/antigravity-seo/commoncrawl/` (90-day TTL)
 - **Blind spots:** No anchor text, no page-level data, monthly/quarterly freshness,
   domain-level only (e.g., "nytimes.com links to example.com" but not which page)
 
 ### Verification Crawler (Always Available)
 - **No auth needed:** Uses existing fetch_page.py + parse_html.py
 - **Data:** Binary verification (link exists/lost/moved), anchor text, rel attributes
-- **Command:** `claude-seo run verify_backlinks.py`
+- **Command:** `antigravity-seo run verify_backlinks.py`
 - **Input:** JSON file with `[{"source_url": "..."}]` entries
 - **Polite crawling:** 1-second delay between requests to same domain
 - **Best for:** Checking if known backlinks still exist, monitoring link health
@@ -105,3 +105,4 @@ Suggest the paid DataForSEO extension when:
 3. **Own-site restriction:** GSC and Ahrefs Webmaster Tools only work for verified properties
 4. **Missing quality metrics:** Raw CC data lacks authority/toxicity scores
 5. **Freshness lag:** Free sources update monthly at best vs. minutes for commercial
+

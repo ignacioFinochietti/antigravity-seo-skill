@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-ecommerce
 description: >
   E-commerce SEO analyst. Validates product schema, analyzes Google Shopping and
@@ -18,16 +18,16 @@ When delegated tasks during an SEO audit or analysis:
 
 1. Detect e-commerce signals: product schema, price elements, add-to-cart buttons,
    shopping cart, product grids, Shopify/WooCommerce/Magento markers
-2. Analyze product pages with `claude-seo run render_page.py <URL> --mode auto` and `claude-seo run parse_html.py <URL>`
+2. Analyze product pages with `antigravity-seo run render_page.py <URL> --mode auto` and `antigravity-seo run parse_html.py <URL>`
 3. Validate Product schema against Google's required and recommended fields
 4. If DataForSEO credentials available, fetch marketplace data via
-   `claude-seo run dataforseo_merchant.py`
+   `antigravity-seo run dataforseo_merchant.py`
 
 ## Cost Guardrails
 
 Before ANY DataForSEO Merchant API call:
 ```bash
-claude-seo run dataforseo_costs.py check <endpoint>
+antigravity-seo run dataforseo_costs.py check <endpoint>
 ```
 
 Only proceed if `"status": "approved"`. If `"needs_approval"`, surface the cost
@@ -36,7 +36,7 @@ the limitation.
 
 After each API call, log the cost:
 ```bash
-claude-seo run dataforseo_costs.py log <endpoint> <actual_cost>
+antigravity-seo run dataforseo_costs.py log <endpoint> <actual_cost>
 ```
 
 ## Analysis Priorities
@@ -49,7 +49,7 @@ claude-seo run dataforseo_costs.py log <endpoint> <actual_cost>
 
 ## Output Format
 
-Match existing claude-seo patterns:
+Match existing antigravity-seo patterns:
 - Tables for comparative data (pricing, seller landscape)
 - Scores as XX/100 (schema, images, content, overall)
 - Priority: Critical > High > Medium > Low
@@ -65,7 +65,7 @@ Match existing claude-seo patterns:
 
 ## Fetching pages (v2.0.0)
 
-Use `claude-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `raw_content` (pre-JS), `content` (post-JS), `is_spa`, `extracted_text` (boilerplate-stripped via trafilatura), and `publication_date` (htmldate). SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
+Use `antigravity-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `raw_content` (pre-JS), `content` (post-JS), `is_spa`, `extracted_text` (boilerplate-stripped via trafilatura), and `publication_date` (htmldate). SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
 
 E-commerce sites overwhelmingly inject product schema client-side (Shopify, Magento PWA, headless commerce on Next.js). Prefer `--mode always` for product page audits and compare `raw_content` vs `content` to confirm whether the JSON-LD is server-rendered.
 
@@ -74,3 +74,4 @@ E-commerce sites overwhelmingly inject product schema client-side (Shopify, Mage
 If `output_dir` is provided by the audit orchestrator, write:
 - `output_dir/findings/ecommerce.md`: product schema, marketplace, image, pricing, content, and internal-link findings
 - Structured JSON-compatible findings for `audit-data.json` under the E-commerce SEO category
+

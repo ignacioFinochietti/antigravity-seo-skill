@@ -1,4 +1,4 @@
-# Architecture
+﻿# Architecture
 
 ## Overview
 
@@ -9,56 +9,56 @@ Claude SEO follows Anthropic's official Claude Code skill specification with a m
 The plugin ships 25 sub-skills (21 core + 1 orchestrator + 1 framework integration + 2 extension mirrors) and 18 sub-agents (15 core + 1 framework integration + 2 extension mirrors).
 
 ```
-~/.claude/plugins/.../claude-seo/
-├── skills/
-│   ├── seo/                    # Main orchestrator
-│   │   ├── SKILL.md
-│   │   └── references/         # On-demand reference files (13 files)
-│   │
-│   ├── seo-audit/              # Full site audit (parallel subagents)
-│   ├── seo-page/               # Single page analysis
-│   ├── seo-technical/          # Technical SEO (9 categories)
-│   ├── seo-content/            # E-E-A-T and content quality
-│   ├── seo-content-brief/      # Competitive content brief generation
-│   ├── seo-schema/             # Schema markup detection and generation
-│   ├── seo-sitemap/            # XML sitemap analysis and generation
-│   ├── seo-images/             # Image optimization analysis
-│   ├── seo-geo/                # AI search optimization (GEO)
-│   ├── seo-local/              # Local SEO (GBP, citations, reviews)
-│   ├── seo-maps/               # Maps intelligence (geo-grid, GBP audit)
-│   ├── seo-backlinks/          # Backlink profile analysis
-│   ├── seo-cluster/            # Semantic topic clustering (SERP-based)
-│   ├── seo-sxo/                # Search Experience Optimization
-│   ├── seo-drift/              # SEO drift monitoring (baselines)
-│   ├── seo-ecommerce/          # E-commerce SEO (product schema, marketplaces)
-│   ├── seo-hreflang/           # International SEO and hreflang
-│   ├── seo-plan/               # Strategic SEO planning (industry templates)
-│   ├── seo-programmatic/       # Programmatic SEO at scale
-│   ├── seo-competitor-pages/   # Competitor comparison page generation
-│   ├── seo-google/             # Google SEO APIs (GSC, PSI, CrUX, GA4)
-│   ├── seo-flow/               # FLOW framework integration (CC BY 4.0)
-│   ├── seo-dataforseo/         # DataForSEO MCP mirror (extension surface)
-│   └── seo-image-gen/          # Banana MCP mirror (extension surface)
-│
-└── agents/
-    ├── seo-technical.md        # Crawlability, indexability, security
-    ├── seo-content.md          # E-E-A-T, readability, thin content
-    ├── seo-schema.md           # Structured data validation
-    ├── seo-sitemap.md          # Sitemap quality gates
-    ├── seo-performance.md      # Core Web Vitals
-    ├── seo-visual.md           # Screenshots, mobile rendering
-    ├── seo-geo.md              # AI crawler access, citability
-    ├── seo-local.md            # GBP signals, NAP, reviews
-    ├── seo-maps.md             # Geo-grid, competitor radius mapping
-    ├── seo-backlinks.md        # Moz, Bing Webmaster, Common Crawl
-    ├── seo-cluster.md          # Semantic clustering analysis
-    ├── seo-sxo.md              # Page-type, user stories, personas
-    ├── seo-drift.md            # Baseline comparison, regression detection
-    ├── seo-ecommerce.md        # Product schema, marketplace intelligence
-    ├── seo-google.md           # GSC, PSI, CrUX, GA4 analyst
-    ├── seo-flow.md             # FLOW framework prompt selection
-    ├── seo-dataforseo.md       # DataForSEO MCP mirror
-    └── seo-image-gen.md        # Banana MCP mirror
+~/.claude/plugins/.../antigravity-seo/
+â”œâ”€â”€ skills/
+â”‚   â”œâ”€â”€ seo/                    # Main orchestrator
+â”‚   â”‚   â”œâ”€â”€ SKILL.md
+â”‚   â”‚   â””â”€â”€ references/         # On-demand reference files (13 files)
+â”‚   â”‚
+â”‚   â”œâ”€â”€ seo-audit/              # Full site audit (parallel subagents)
+â”‚   â”œâ”€â”€ seo-page/               # Single page analysis
+â”‚   â”œâ”€â”€ seo-technical/          # Technical SEO (9 categories)
+â”‚   â”œâ”€â”€ seo-content/            # E-E-A-T and content quality
+â”‚   â”œâ”€â”€ seo-content-brief/      # Competitive content brief generation
+â”‚   â”œâ”€â”€ seo-schema/             # Schema markup detection and generation
+â”‚   â”œâ”€â”€ seo-sitemap/            # XML sitemap analysis and generation
+â”‚   â”œâ”€â”€ seo-images/             # Image optimization analysis
+â”‚   â”œâ”€â”€ seo-geo/                # AI search optimization (GEO)
+â”‚   â”œâ”€â”€ seo-local/              # Local SEO (GBP, citations, reviews)
+â”‚   â”œâ”€â”€ seo-maps/               # Maps intelligence (geo-grid, GBP audit)
+â”‚   â”œâ”€â”€ seo-backlinks/          # Backlink profile analysis
+â”‚   â”œâ”€â”€ seo-cluster/            # Semantic topic clustering (SERP-based)
+â”‚   â”œâ”€â”€ seo-sxo/                # Search Experience Optimization
+â”‚   â”œâ”€â”€ seo-drift/              # SEO drift monitoring (baselines)
+â”‚   â”œâ”€â”€ seo-ecommerce/          # E-commerce SEO (product schema, marketplaces)
+â”‚   â”œâ”€â”€ seo-hreflang/           # International SEO and hreflang
+â”‚   â”œâ”€â”€ seo-plan/               # Strategic SEO planning (industry templates)
+â”‚   â”œâ”€â”€ seo-programmatic/       # Programmatic SEO at scale
+â”‚   â”œâ”€â”€ seo-competitor-pages/   # Competitor comparison page generation
+â”‚   â”œâ”€â”€ seo-google/             # Google SEO APIs (GSC, PSI, CrUX, GA4)
+â”‚   â”œâ”€â”€ seo-flow/               # FLOW framework integration (CC BY 4.0)
+â”‚   â”œâ”€â”€ seo-dataforseo/         # DataForSEO MCP mirror (extension surface)
+â”‚   â””â”€â”€ seo-image-gen/          # Banana MCP mirror (extension surface)
+â”‚
+â””â”€â”€ agents/
+    â”œâ”€â”€ seo-technical.md        # Crawlability, indexability, security
+    â”œâ”€â”€ seo-content.md          # E-E-A-T, readability, thin content
+    â”œâ”€â”€ seo-schema.md           # Structured data validation
+    â”œâ”€â”€ seo-sitemap.md          # Sitemap quality gates
+    â”œâ”€â”€ seo-performance.md      # Core Web Vitals
+    â”œâ”€â”€ seo-visual.md           # Screenshots, mobile rendering
+    â”œâ”€â”€ seo-geo.md              # AI crawler access, citability
+    â”œâ”€â”€ seo-local.md            # GBP signals, NAP, reviews
+    â”œâ”€â”€ seo-maps.md             # Geo-grid, competitor radius mapping
+    â”œâ”€â”€ seo-backlinks.md        # Moz, Bing Webmaster, Common Crawl
+    â”œâ”€â”€ seo-cluster.md          # Semantic clustering analysis
+    â”œâ”€â”€ seo-sxo.md              # Page-type, user stories, personas
+    â”œâ”€â”€ seo-drift.md            # Baseline comparison, regression detection
+    â”œâ”€â”€ seo-ecommerce.md        # Product schema, marketplace intelligence
+    â”œâ”€â”€ seo-google.md           # GSC, PSI, CrUX, GA4 analyst
+    â”œâ”€â”€ seo-flow.md             # FLOW framework prompt selection
+    â”œâ”€â”€ seo-dataforseo.md       # DataForSEO MCP mirror
+    â””â”€â”€ seo-image-gen.md        # Banana MCP mirror
 ```
 
 ## Component Types
@@ -106,60 +106,60 @@ Reference files contain static data loaded on-demand to avoid bloating the main 
 
 ```
 User request
-    │
-    ▼
-┌──────────────────┐
-│   seo            │  Main orchestrator (skills/seo/SKILL.md)
-└────────┬─────────┘
-         │  Detects business type and signals
-         │  Spawns subagents in parallel
-         │
-    ┌────┴────┬────────┬────────┬────────┬────────┬────────┐
-    ▼         ▼        ▼        ▼        ▼        ▼        ▼
-┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐
-│tech   │ │content│ │schema │ │sitemap│ │perf   │ │visual │ │geo    │
-└───┬───┘ └───┬───┘ └───┬───┘ └───┬───┘ └───┬───┘ └───┬───┘ └───┬───┘
-    │         │         │         │         │         │         │
-    └─────────┴─────────┴────┬────┴─────────┴─────────┴─────────┘
-                             │
-                             │  Conditional spawns:
-                             │  - seo-google     (Google API creds detected)
-                             │  - seo-local      (local business detected)
-                             │  - seo-maps       (local + DataForSEO MCP)
-                             │  - seo-backlinks  (Moz/Bing/CC available)
-                             │  - seo-cluster    (content strategy signals)
-                             │  - seo-sxo        (always in full audits)
-                             │  - seo-drift      (baseline exists for URL)
-                             │  - seo-ecommerce  (e-commerce detected)
-                             ▼
-                    ┌────────────────┐
-                    │  Aggregate     │
-                    │  Results       │
-                    └────────┬───────┘
-                             │
-                             ▼
-                    ┌────────────────┐
-                    │  Generate      │
-                    │  Health Score  │
-                    │  + Action Plan │
-                    └────────────────┘
+    â”‚
+    â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   seo            â”‚  Main orchestrator (skills/seo/SKILL.md)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+         â”‚  Detects business type and signals
+         â”‚  Spawns subagents in parallel
+         â”‚
+    â”Œâ”€â”€â”€â”€â”´â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”
+    â–¼         â–¼        â–¼        â–¼        â–¼        â–¼        â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”
+â”‚tech   â”‚ â”‚contentâ”‚ â”‚schema â”‚ â”‚sitemapâ”‚ â”‚perf   â”‚ â”‚visual â”‚ â”‚geo    â”‚
+â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜ â””â”€â”€â”€â”¬â”€â”€â”€â”˜
+    â”‚         â”‚         â”‚         â”‚         â”‚         â”‚         â”‚
+    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                             â”‚
+                             â”‚  Conditional spawns:
+                             â”‚  - seo-google     (Google API creds detected)
+                             â”‚  - seo-local      (local business detected)
+                             â”‚  - seo-maps       (local + DataForSEO MCP)
+                             â”‚  - seo-backlinks  (Moz/Bing/CC available)
+                             â”‚  - seo-cluster    (content strategy signals)
+                             â”‚  - seo-sxo        (always in full audits)
+                             â”‚  - seo-drift      (baseline exists for URL)
+                             â”‚  - seo-ecommerce  (e-commerce detected)
+                             â–¼
+                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                    â”‚  Aggregate     â”‚
+                    â”‚  Results       â”‚
+                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜
+                             â”‚
+                             â–¼
+                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                    â”‚  Generate      â”‚
+                    â”‚  Health Score  â”‚
+                    â”‚  + Action Plan â”‚
+                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ### Individual Command
 
 ```
 User Request (e.g., /seo page)
-    │
-    ▼
-┌─────────────────┐
-│   seo       │  ← Routes to sub-skill
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   seo-page      │  ← Sub-skill handles directly
-│   (SKILL.md)    │
-└─────────────────┘
+    â”‚
+    â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   seo       â”‚  â† Routes to sub-skill
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+         â”‚
+         â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   seo-page      â”‚  â† Sub-skill handles directly
+â”‚   (SKILL.md)    â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ## Design Principles
@@ -181,7 +181,7 @@ User Request (e.g., /seo page)
 - Built-in thresholds prevent bad recommendations
 - Location page limits (30 warning, 50 hard stop)
 - Schema deprecation awareness
-- FID → INP replacement enforced
+- FID â†’ INP replacement enforced
 
 ### 4. Industry Awareness
 
@@ -224,7 +224,7 @@ User Request (e.g., /seo page)
 
 ### Managed Python runtime
 
-Bundled tools are dispatched through `bin/claude-seo` and
+Bundled tools are dispatched through `bin/antigravity-seo` and
 `scripts/runtime.py`, never through a working-directory-relative Python command.
 The launcher resolves Python 3.10 or newer, while the standard-library runtime
 provides three operations: `run`, `setup`, and read-only `doctor`.
@@ -246,69 +246,69 @@ Extensions are opt-in add-ons that integrate external data sources via MCP serve
 
 ```
 extensions/
-├── dataforseo/               # DataForSEO MCP integration
-│   ├── README.md
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── uninstall.ps1
-│   ├── field-config.json
-│   ├── skills/seo-dataforseo/SKILL.md
-│   ├── agents/seo-dataforseo.md
-│   └── docs/DATAFORSEO-SETUP.md
-│
-├── banana/                   # AI image generation via Gemini
-│   ├── README.md
-│   ├── install.sh
-│   ├── uninstall.sh
-│   ├── skills/seo-image-gen/SKILL.md
-│   ├── agents/seo-image-gen.md
-│   ├── scripts/              # Python fallback scripts (stdlib only)
-│   ├── references/           # 7 reference files (prompt engineering, models, presets)
-│   └── docs/BANANA-SETUP.md
-│
-├── firecrawl/                # Firecrawl MCP for full-site crawling
-│   ├── README.md
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── uninstall.ps1
-│   └── skills/seo-firecrawl/SKILL.md
-│
-├── ahrefs/                   # Ahrefs MCP for backlinks + organic data
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── skills/seo-ahrefs/SKILL.md
-│   └── docs/AHREFS-SETUP.md
-│
-├── seranking/                # SE Ranking AI Share-of-Voice tracking
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── skills/seo-seranking/SKILL.md
-│   └── docs/SERANKING-SETUP.md
-│
-├── profound/                 # Profound LLM citation tracking
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── skills/seo-profound/SKILL.md
-│   └── docs/PROFOUND-SETUP.md
-│
-├── bing-webmaster/           # Bing Webmaster Tools + IndexNow
-│   ├── install.sh
-│   ├── install.ps1
-│   ├── uninstall.sh
-│   ├── skills/seo-bing/SKILL.md
-│   └── docs/BING-WEBMASTER-SETUP.md
-│
-└── unlighthouse/             # Multi-page Lighthouse runner (local)
-    ├── install.sh
-    ├── install.ps1
-    ├── uninstall.sh
-    ├── skills/seo-unlighthouse/SKILL.md
-    └── docs/UNLIGHTHOUSE-SETUP.md
+â”œâ”€â”€ dataforseo/               # DataForSEO MCP integration
+â”‚   â”œâ”€â”€ README.md
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ uninstall.ps1
+â”‚   â”œâ”€â”€ field-config.json
+â”‚   â”œâ”€â”€ skills/seo-dataforseo/SKILL.md
+â”‚   â”œâ”€â”€ agents/seo-dataforseo.md
+â”‚   â””â”€â”€ docs/DATAFORSEO-SETUP.md
+â”‚
+â”œâ”€â”€ banana/                   # AI image generation via Gemini
+â”‚   â”œâ”€â”€ README.md
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ skills/seo-image-gen/SKILL.md
+â”‚   â”œâ”€â”€ agents/seo-image-gen.md
+â”‚   â”œâ”€â”€ scripts/              # Python fallback scripts (stdlib only)
+â”‚   â”œâ”€â”€ references/           # 7 reference files (prompt engineering, models, presets)
+â”‚   â””â”€â”€ docs/BANANA-SETUP.md
+â”‚
+â”œâ”€â”€ firecrawl/                # Firecrawl MCP for full-site crawling
+â”‚   â”œâ”€â”€ README.md
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ uninstall.ps1
+â”‚   â””â”€â”€ skills/seo-firecrawl/SKILL.md
+â”‚
+â”œâ”€â”€ ahrefs/                   # Ahrefs MCP for backlinks + organic data
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ skills/seo-ahrefs/SKILL.md
+â”‚   â””â”€â”€ docs/AHREFS-SETUP.md
+â”‚
+â”œâ”€â”€ seranking/                # SE Ranking AI Share-of-Voice tracking
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ skills/seo-seranking/SKILL.md
+â”‚   â””â”€â”€ docs/SERANKING-SETUP.md
+â”‚
+â”œâ”€â”€ profound/                 # Profound LLM citation tracking
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ skills/seo-profound/SKILL.md
+â”‚   â””â”€â”€ docs/PROFOUND-SETUP.md
+â”‚
+â”œâ”€â”€ bing-webmaster/           # Bing Webmaster Tools + IndexNow
+â”‚   â”œâ”€â”€ install.sh
+â”‚   â”œâ”€â”€ install.ps1
+â”‚   â”œâ”€â”€ uninstall.sh
+â”‚   â”œâ”€â”€ skills/seo-bing/SKILL.md
+â”‚   â””â”€â”€ docs/BING-WEBMASTER-SETUP.md
+â”‚
+â””â”€â”€ unlighthouse/             # Multi-page Lighthouse runner (local)
+    â”œâ”€â”€ install.sh
+    â”œâ”€â”€ install.ps1
+    â”œâ”€â”€ uninstall.sh
+    â”œâ”€â”€ skills/seo-unlighthouse/SKILL.md
+    â””â”€â”€ docs/UNLIGHTHOUSE-SETUP.md
 ```
 
 ### Available Extensions
@@ -333,3 +333,4 @@ extensions/
 5. Installs the sub-agent mirror to the plugin's agent directory (extensions that ship one; lighter extensions are skill-only)
 6. Merges MCP config into `~/.claude/settings.json` non-destructively
 7. MCP server versions are pinned (`@<version>`) for supply-chain stability
+

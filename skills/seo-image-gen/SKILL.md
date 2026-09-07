@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-image-gen
 description: "AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics. Powered by Gemini via nanobanana-mcp. Requires banana extension installed. Use when user says \"generate image\", \"OG image\", \"social preview\", \"hero image\", \"blog image\", \"product photo\", \"infographic\", \"seo image\", \"create visual\", \"image-gen\", \"favicon\", \"schema image\", \"pinterest pin\", \"generate visual\", \"banner\", or \"thumbnail\"."
 argument-hint: "[og|hero|product|infographic|custom|batch] <description>"
@@ -143,7 +143,7 @@ Approximate costs:
 | API key invalid | New key at https://aistudio.google.com/apikey |
 | Rate limited (429) | Wait 60s, retry. Free tier: ~10 RPM / ~500 RPD |
 | `IMAGE_SAFETY` | Rephrase prompt - see `references/prompt-engineering.md` Safety section |
-| MCP unavailable | Configure MCP with `./extensions/banana/install.sh`; claude-seo does not vendor a local generation fallback script |
+| MCP unavailable | Configure MCP with `./extensions/banana/install.sh`; antigravity-seo does not vendor a local generation fallback script |
 | Extension not installed | Show install instructions: `./extensions/banana/install.sh` |
 
 ## Cross-Skill Integration
@@ -171,3 +171,4 @@ After generating, always provide:
 3. **Settings**:model, aspect ratio, resolution
 4. **SEO checklist**:alt text suggestion, file naming, WebP conversion
 5. **Schema snippet**:ImageObject or og:image markup if applicable
+

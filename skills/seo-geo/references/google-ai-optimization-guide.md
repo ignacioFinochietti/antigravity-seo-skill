@@ -1,22 +1,22 @@
-# Google AI Optimization Guide — primary-source synthesis (June 2026)
+﻿# Google AI Optimization Guide â€” primary-source synthesis (June 2026)
 
 Google published a dedicated **AI optimization guide** under Search Central
 docs (under the new "Generative AI fundamentals" section; announced via the
 Search Central blog 2026-05-15, doc last updated 2026-06-29). Its position is
 the most-cited primary source for how AI Overviews and AI Mode interact with
-Search ranking. Every claude-seo audit that touches GEO should treat this doc
+Search ranking. Every antigravity-seo audit that touches GEO should treat this doc
 as the canonical reference and reject community claims that contradict it.
 
 **Primary source:**
 https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 (announcing blog: https://developers.google.com/search/blog/2026/05/a-new-resource-for-optimizing)
 
-> **Companion doc — third-party SEO tools (2026-06-05):** Google published
+> **Companion doc â€” third-party SEO tools (2026-06-05):** Google published
 > "Using third-party SEO tools, services, and advice." No tool guarantees
 > rankings; third-party tools have **no access to Google's internal ranking
 > data**; Google does not endorse vendors; evaluate AEO/GEO claims against
 > official guidance; Search Console is the authoritative first-party source.
-> claude-seo's scores are heuristics, not Google-internal signals — state this
+> antigravity-seo's scores are heuristics, not Google-internal signals â€” state this
 > honestly in reports. Source:
 > https://developers.google.com/search/docs/fundamentals/third-party-seo
 
@@ -24,14 +24,14 @@ https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 
 > "Optimizing for generative AI search is **still SEO** from Google's
 > perspective. AEO and GEO are rebranded labels for the same work."
-> — Google, AI optimization guide
+> â€” Google, AI optimization guide
 
 AI Overviews and AI Mode are grounded in the same ranking and quality systems
 as classic Search. Two AI techniques layer on top:
 
-1. **RAG / grounding** — retrieves indexed pages, generates a response with
+1. **RAG / grounding** â€” retrieves indexed pages, generates a response with
    clickable source links.
-2. **Query fan-out** — issues multiple related sub-queries and pulls in
+2. **Query fan-out** â€” issues multiple related sub-queries and pulls in
    additional results before answering.
 
 **Eligibility floor:** a page must be **indexed and eligible to be shown with
@@ -45,7 +45,7 @@ Google explicitly says you **do NOT need to**:
 
 | Claim Google rejects | Source |
 |---|---|
-| Create `llms.txt` or AI-specific markup files | AI optimization guide §"Myths" |
+| Create `llms.txt` or AI-specific markup files | AI optimization guide Â§"Myths" |
 | "Chunk" your content into small pieces for AI | Same |
 | Rewrite content for AI with specific phrasings or long-tail keyword variations | Same |
 | Chase inauthentic mentions across blogs / forums / videos | Same |
@@ -67,13 +67,13 @@ The AI optimization guide links to Google's E-E-A-T guidance:
 **Primary source:**
 https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 
-Key actionable test — **Who / How / Why**:
+Key actionable test â€” **Who / How / Why**:
 
-- **Who** created it — bylines expected where readers expect them; author
+- **Who** created it â€” bylines expected where readers expect them; author
   background pages required for YMYL.
-- **How** it was created — especially for AI-assisted content; disclose
+- **How** it was created â€” especially for AI-assisted content; disclose
   process where readers would reasonably ask.
-- **Why** it exists — "to help people," not "to attract search clicks."
+- **Why** it exists â€” "to help people," not "to attract search clicks."
 
 YMYL ("Your Money or Your Life") topics get extra weight: health, finance,
 safety. Sept 2025 QRG expanded YMYL to include political / social topics.
@@ -92,12 +92,12 @@ https://developers.google.com/search/blog/2023/02/google-search-and-ai-content
 (plus the Search Essentials spam policies)
 
 Generative AI content is fine if it meets Search Essentials. It crosses into
-spam when used to **scale low-value pages** (QRG §4.6.5 scaled content abuse,
-§4.6.6 low-effort main content).
+spam when used to **scale low-value pages** (QRG Â§4.6.5 scaled content abuse,
+Â§4.6.6 low-effort main content).
 
 Two operational requirements with concrete enforcement surfaces:
 
-1. **Merchant Center — AI-generated product images:** must carry IPTC
+1. **Merchant Center â€” AI-generated product images:** must carry IPTC
    `DigitalSourceType: TrainedAlgorithmicMedia` metadata. See
    `skills/seo-images/SKILL.md` for the audit + injection pattern.
 2. **AI-generated product titles and descriptions:** must be separately
@@ -105,7 +105,7 @@ Two operational requirements with concrete enforcement surfaces:
 
 ## Forward-looking: agent-friendly pages and WebMCP
 
-The AI optimization guide pivots near the end to **AI agents** — not just
+The AI optimization guide pivots near the end to **AI agents** â€” not just
 summarizers. Agents interact with sites through three channels: screenshots
 plus a vision model, raw HTML/DOM, and the browser accessibility tree.
 
@@ -120,13 +120,13 @@ Search; ucp.dev lists 2026-04-08 as the latest date-based release, non-Google
 and hedged). UCP audit criteria:
 `skills/seo-ecommerce/references/ucp-universal-commerce-protocol.md`.
 
-## How claude-seo treats this guide
+## How antigravity-seo treats this guide
 
 1. `seo-geo` audits cite this URL as the authoritative source whenever the
    user asks about AEO/GEO frameworks.
 2. The myth-busting list above gates community-sourced AI-SEO recommendations
-   — if a recommendation contradicts Google's stated position, flag it.
-3. Where a third-party claim and Google contradict, claude-seo defers to
+   â€” if a recommendation contradicts Google's stated position, flag it.
+3. Where a third-party claim and Google contradict, antigravity-seo defers to
    Google and notes the contradiction explicitly.
 4. `seo-ecommerce` and `seo-images` enforce the two operational requirements
    above for sites using AI to generate product content.
@@ -140,3 +140,4 @@ and hedged). UCP audit criteria:
 - The UCP / WebMCP standards advance (UCP has ucp.dev-listed date-based spec
   2026-04-08, non-Google and hedged; WebMCP Chrome 149 origin-trial status is
   unresolved).
+

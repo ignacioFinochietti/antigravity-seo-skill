@@ -1,4 +1,4 @@
-# DataForSEO API Cost Reference
+﻿# DataForSEO API Cost Reference
 
 ## Pricing Tiers (USD per call, standard queue)
 
@@ -31,7 +31,7 @@
 | **Aggressive** | $50.00 | $2.00 | threshold | Agency bulk work |
 | **Unlimited** | $999.00 | -- | none | Trusted pipelines |
 
-Configure with: `claude-seo run dataforseo_costs.py config --mode threshold --threshold 0.50 --daily-limit 10.00`
+Configure with: `antigravity-seo run dataforseo_costs.py config --mode threshold --threshold 0.50 --daily-limit 10.00`
 
 ## Cost Reduction Tips
 
@@ -39,16 +39,16 @@ Configure with: `claude-seo run dataforseo_costs.py config --mode threshold --th
 - Batch keywords into single `search_volume` calls instead of individual SERP lookups
 - Use `standard` task queue instead of `live` for non-urgent analysis (60-80% savings)
 - Avoid `site:` and `filetype:` operators in image SERP queries (5x cost multiplier)
-- Cache session results — don't re-fetch the same keyword/domain within a session
+- Cache session results â€” don't re-fetch the same keyword/domain within a session
 
 ## Approval Flow
 
 Before any DataForSEO MCP call:
-1. Run `claude-seo run dataforseo_costs.py check <endpoint> [--count N]`
-2. If `status: "approved"` → proceed
-3. If `status: "needs_approval"` → show cost to user, ask to confirm
-4. If `status: "blocked"` → inform user daily limit would be exceeded
-5. After call completes, log: `claude-seo run dataforseo_costs.py log <endpoint> <cost>`
+1. Run `antigravity-seo run dataforseo_costs.py check <endpoint> [--count N]`
+2. If `status: "approved"` â†’ proceed
+3. If `status: "needs_approval"` â†’ show cost to user, ask to confirm
+4. If `status: "blocked"` â†’ inform user daily limit would be exceeded
+5. After call completes, log: `antigravity-seo run dataforseo_costs.py log <endpoint> <cost>`
 
 ## Warn Endpoints
 
@@ -58,3 +58,4 @@ These endpoints always require user confirmation regardless of approval mode:
 - `ai_optimization_chat_gpt_scraper` (ChatGPT web scraping)
 - `ai_opt_llm_ment_search` (LLM mention tracking)
 - `merchant_amazon_products_search` (Amazon product data)
+

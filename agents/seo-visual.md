@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-visual
 description: Visual analyzer. Captures screenshots, tests mobile rendering, and analyzes above-the-fold content using Playwright.
 model: sonnet
@@ -29,8 +29,8 @@ pip install playwright && playwright install chromium
 Use the managed screenshot and renderer commands for browser automation:
 
 ```bash
-claude-seo run capture_screenshot.py URL --all --output screenshots/
-claude-seo run render_page.py URL --mode auto --a11y-tree --json
+antigravity-seo run capture_screenshot.py URL --all --output screenshots/
+antigravity-seo run render_page.py URL --mode auto --a11y-tree --json
 ```
 
 ## Viewports to Test
@@ -78,3 +78,4 @@ If `output_dir` is provided by the audit orchestrator, write:
 - `output_dir/screenshots/desktop.png` and `output_dir/screenshots/mobile.png` when capture succeeds
 - `output_dir/findings/visual.md`: above-the-fold, mobile, layout, and accessibility-tree findings
 - Structured JSON-compatible findings for `audit-data.json` under the Visual category
+

@@ -1,4 +1,4 @@
-# SEO Image Presets
+﻿# SEO Image Presets
 
 Pre-configured presets for common SEO image use cases. These map to banana's
 preset format (see `references/presets.md` for schema details).
@@ -123,7 +123,7 @@ preset format (see `references/presets.md` for schema details).
 
 Users can create their own presets with the installed Banana MCP preset tool.
 If the standalone Banana extension is not installed, configure it before using
-custom presets. The core claude-seo skill does not assume a local fallback
+custom presets. The core antigravity-seo skill does not assume a local fallback
 script or a fixed personal configuration directory.
 
 This creates `~/.banana/presets/my-brand.json` with the full schema.
@@ -135,3 +135,4 @@ Custom presets override SEO defaults when specified.
 2. If user mentions a brand preset name, load from `~/.banana/presets/`
 3. Brand presets override SEO presets for colors, mood, and typography
 4. SEO presets always provide aspect ratio and resolution defaults
+

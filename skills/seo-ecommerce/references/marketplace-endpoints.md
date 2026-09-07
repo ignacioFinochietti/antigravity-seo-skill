@@ -1,4 +1,4 @@
-# DataForSEO Merchant API Reference
+﻿# DataForSEO Merchant API Reference
 
 Endpoint details for Google Shopping and Amazon marketplace data.
 
@@ -110,10 +110,11 @@ When consuming responses, normalize:
 | Rating | Integer or float | Float rounded to 1 decimal |
 | Reviews | String or int | Integer |
 
-Use `claude-seo run dataforseo_normalize.py --module merchant` for automatic normalization.
+Use `antigravity-seo run dataforseo_normalize.py --module merchant` for automatic normalization.
 
 ## Cost Reference
 
 See `skills/seo-dataforseo/references/cost-tiers.md` for the full pricing table,
 budget presets, and cost reduction tips. All Merchant endpoints are $0.02/call
 on standard queue.
+

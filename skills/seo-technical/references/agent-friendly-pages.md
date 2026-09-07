@@ -1,14 +1,14 @@
-# Agent-friendly pages — audit reference (June 2026)
+﻿# Agent-friendly pages â€” audit reference (June 2026)
 
-The next wave of AI search is not summarization — it's **agents** acting on the
+The next wave of AI search is not summarization â€” it's **agents** acting on the
 user's behalf (search, compare, buy, book). Google's AI optimization guide and
 the linked web.dev article describe three channels through which agents
 interpret your site:
 
-1. **Screenshots + vision model** — interprets visual hierarchy, button
+1. **Screenshots + vision model** â€” interprets visual hierarchy, button
    prominence, layout. Slow and token-expensive.
-2. **Raw HTML / DOM** — nesting, IDs, classes, data attributes.
-3. **The accessibility tree** — the browser-native semantic distillation
+2. **Raw HTML / DOM** â€” nesting, IDs, classes, data attributes.
+3. **The accessibility tree** â€” the browser-native semantic distillation
    (roles, names, states). The cleanest signal of the three.
 
 Modern agents combine all three. Optimizing for the **accessibility tree** is
@@ -36,7 +36,7 @@ If you cannot use a real interactive tag, supply ARIA: `role="button"`,
 
 **Why it matters:** the accessibility tree exposes real interactive elements
 with their roles. Custom div widgets often appear in the tree with no role at
-all — agents skip them.
+all â€” agents skip them.
 
 ### 2. Label associations
 
@@ -49,15 +49,15 @@ Every form input must have an associated label:
 
 Or use `aria-label` / `aria-labelledby` where a visible label isn't possible.
 Agents that read the accessibility tree get the field purpose directly from
-the associated label — without it, the input is a void.
+the associated label â€” without it, the input is a void.
 
 ### 3. Interactive target size
 
 Visual-analysis pipelines filter out interactive elements smaller than **~8
-square pixels** of unobscured area. Tap-target accessibility minimums (24×24
-WCAG AA, 44×44 Apple HIG) are stricter and pass the agent gate by default.
+square pixels** of unobscured area. Tap-target accessibility minimums (24Ã—24
+WCAG AA, 44Ã—44 Apple HIG) are stricter and pass the agent gate by default.
 
-Audit: any clickable element below 24×24px is a candidate for agent
+Audit: any clickable element below 24Ã—24px is a candidate for agent
 invisibility, in addition to the WCAG failure.
 
 ### 4. Don't cover interactive nodes with transparent overlays
@@ -78,7 +78,7 @@ visit. Keep functionally identical actions in the same screen quadrant across
 templates.
 
 Cross-reference: this overlaps with **CLS** (Cumulative Layout Shift) in Core
-Web Vitals, but the agent-UX concern is broader — it covers page-to-page
+Web Vitals, but the agent-UX concern is broader â€” it covers page-to-page
 stability, not just within-page shift.
 
 ### 6. `cursor: pointer` as a legitimate signal
@@ -87,7 +87,7 @@ Vision models read `cursor: pointer` (set by default on `<a>` / `<button>`) as
 a hint that an element is actionable. Do not override it to `cursor: default`
 on truly interactive elements just for visual minimalism.
 
-Inverse: do not apply `cursor: pointer` to non-interactive elements — that
+Inverse: do not apply `cursor: pointer` to non-interactive elements â€” that
 makes agents click things that do nothing.
 
 ### 7. Stable, meaningful selectors
@@ -99,28 +99,28 @@ Agents that fall back to DOM parsing rely on:
 - `data-*` attributes that describe purpose, not implementation
 
 Avoid auto-generated class names like `__sc_a4b7d9e2` as the only handle on a
-critical interactive element — agents can target them but cannot tell what
+critical interactive element â€” agents can target them but cannot tell what
 they mean.
 
 ## Lighthouse Agentic Browsing category (shipped)
 
-Google now ships a dedicated **Agentic Browsing** Lighthouse category — created
+Google now ships a dedicated **Agentic Browsing** Lighthouse category â€” created
 in Lighthouse **13.2.0 (2026-05-01)** and **on by default since 13.3.0
 (2026-05-07)** in DevTools and the CLI (Chrome 150+). Category id:
 `agentic-browsing`. Unlike other categories it reports a **fractional
-pass-ratio** (X of N checks passed), **not** a 0–100 weighted score — so do not
+pass-ratio** (X of N checks passed), **not** a 0â€“100 weighted score â€” so do not
 compute or report a weighted agentic "score". It groups deterministic audits
 into three buckets:
 
-- **Agent-centric accessibility** — reuses three a11y audits: *Names and labels*
+- **Agent-centric accessibility** â€” reuses three a11y audits: *Names and labels*
   (every interactive element has a programmatic name), *Tree integrity* (valid
   roles + parent-child relationships), *Visibility* (interactive content not
   hidden from the accessibility tree). These map directly onto checklist items
-  1–2 above and the `agent_ux_check.py` heuristics.
-- **Stability & discoverability** — *CLS* (visual stability for element
+  1â€“2 above and the `agent_ux_check.py` heuristics.
+- **Stability & discoverability** â€” *CLS* (visual stability for element
   positioning; see checklist item 5) + an *llms.txt* presence-at-domain-root
   check (13.4.0 relaxed it to allow leading whitespace).
-- **WebMCP integration** — three audits, see below.
+- **WebMCP integration** â€” three audits, see below.
 
 **Run paths:** DevTools Lighthouse panel (Chrome 150+, default-on, no toggle);
 CLI `npx lighthouse@latest <url> --only-categories=agentic-browsing` (Node.js
@@ -150,7 +150,7 @@ in the 13.2.0 release notes:
 
 (Code parsing Lighthouse JSON should expect the release-note ids above.)
 
-**Audit posture:** WebMCP is an active opportunity, not a finding to hard-fail —
+**Audit posture:** WebMCP is an active opportunity, not a finding to hard-fail â€”
 absence is not a defect. Surface it as an opportunity for sites that want
 first-class agent actions, and note origin-trial enrollment is required for the
 audits to fire.
@@ -160,14 +160,14 @@ audits to fire.
 For a fast smoke check, capture the accessibility tree via Lighthouse or
 Chrome DevTools and look for:
 
-- Any interactive element with `role="generic"` → broken semantics.
-- Any input without an `accessible name` → missing label.
-- Any `<div>` with `onclick` and no `role` / `tabindex` → custom widget that
+- Any interactive element with `role="generic"` â†’ broken semantics.
+- Any input without an `accessible name` â†’ missing label.
+- Any `<div>` with `onclick` and no `role` / `tabindex` â†’ custom widget that
   agents won't see.
 
-`claude-seo run render_page.py <URL> --mode auto --a11y-tree --json` loads the
+`antigravity-seo run render_page.py <URL> --mode auto --a11y-tree --json` loads the
 page headlessly and captures Chromium's full accessibility tree through CDP.
-Use `claude-seo run agent_ux_check.py <URL> --json` for the bounded Agent-UX
+Use `antigravity-seo run agent_ux_check.py <URL> --json` for the bounded Agent-UX
 heuristic and its explicit complete, partial, or unavailable score status.
 
 ## Last verified
@@ -179,3 +179,4 @@ captures the Chromium accessibility tree through CDP. Update when:
 - WebMCP graduates from origin trial to a stable/shipped API (or W3C status changes).
 - Google adds or renames audits in the `agentic-browsing` category.
 - web.dev publishes a follow-up article with revised criteria.
+

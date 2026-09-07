@@ -1,4 +1,4 @@
-# Google API Authentication Setup
+﻿# Google API Authentication Setup
 
 ## Overview
 
@@ -40,10 +40,10 @@ Navigate to **APIs & Services > Library** and enable:
 ## Step 4: Create a Service Account
 
 1. **IAM & Admin > Service Accounts > Create Service Account**
-2. Name: `claude-seo` (or similar)
+2. Name: `antigravity-seo` (or similar)
 3. Skip optional permissions steps
 4. Click on the created service account > **Keys > Add Key > Create new key > JSON**
-5. Download the JSON file and store it securely (e.g., `~/.config/claude-seo/service_account.json`)
+5. Download the JSON file and store it securely (e.g., `~/.config/antigravity-seo/service_account.json`)
 
 The JSON file looks like:
 ```json
@@ -82,14 +82,14 @@ The `client_email` field is what you add to GSC and GA4.
 ## Step 7: Create Config File
 
 ```bash
-mkdir -p ~/.config/claude-seo
+mkdir -p ~/.config/antigravity-seo
 ```
 
-Save to `~/.config/claude-seo/google-api.json`:
+Save to `~/.config/antigravity-seo/google-api.json`:
 
 ```json
 {
-  "service_account_path": "~/.config/claude-seo/service_account.json",
+  "service_account_path": "~/.config/antigravity-seo/service_account.json",
   "api_key": "<GOOGLE_API_KEY>",
   "default_property": "sc-domain:example.com",
   "ga4_property_id": "properties/123456789"
@@ -106,7 +106,7 @@ Save to `~/.config/claude-seo/google-api.json`:
 ## Step 8: Verify Setup
 
 ```bash
-claude-seo run google_auth.py --check
+antigravity-seo run google_auth.py --check
 ```
 
 Expected output at Tier 2 (full):
@@ -152,3 +152,4 @@ Instead of (or in addition to) the config file:
 | `404 Not Found` on CrUX | Site has insufficient Chrome traffic. Not a credentials issue. |
 | `429 Rate Limit` | Wait and retry. See rate-limits-quotas.md for per-API limits |
 | `API not enabled` | Enable the specific API in GCP Console > APIs & Services > Library |
+

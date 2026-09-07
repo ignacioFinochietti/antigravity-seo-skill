@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-sitemap
 description: >
   Analyze existing XML sitemaps or generate new ones with industry templates.
@@ -20,7 +20,7 @@ metadata:
 Discover candidates before reporting a sitemap missing:
 
 ```bash
-claude-seo run sitemap_discovery.py <url> --json
+antigravity-seo run sitemap_discovery.py <url> --json
 ```
 
 The helper reads every bounded `Sitemap:` declaration in robots.txt, validates
@@ -31,7 +31,7 @@ line alone as proof that a sitemap works.
 
 ### Validation Checks
 - Valid XML format
-- Per-file limit: **≤50,000 URLs AND ≤50MB uncompressed** (whichever is hit first)
+- Per-file limit: **â‰¤50,000 URLs AND â‰¤50MB uncompressed** (whichever is hit first)
 - All URLs return HTTP 200
 - `<lastmod>` accurate: must be a valid **W3C Datetime** and reflect the **last
   significant content change** (main content, structured data, links, not
@@ -87,24 +87,24 @@ Google documents three subtypes with their own rules, validate per-subtype:
 2. Load industry template from `../seo-plan/assets/` directory
 3. Interactive structure planning with user
 4. Apply quality gates:
-   - ⚠️ WARNING at 30+ location pages (require 60%+ unique content)
-   - 🛑 HARD STOP at 50+ location pages (require justification)
+   - âš ï¸ WARNING at 30+ location pages (require 60%+ unique content)
+   - ðŸ›‘ HARD STOP at 50+ location pages (require justification)
 5. Generate valid XML output
 6. Split at whichever comes first: 50,000 URLs or 50MB uncompressed, with sitemap index
 7. Generate STRUCTURE.md documentation
 
 ### Safe Programmatic Pages (OK at scale)
-✅ Integration pages (with real setup docs)
-✅ Template/tool pages (with downloadable content)
-✅ Glossary pages (200+ word definitions)
-✅ Product pages (unique specs, reviews)
-✅ User profile pages (user-generated content)
+âœ… Integration pages (with real setup docs)
+âœ… Template/tool pages (with downloadable content)
+âœ… Glossary pages (200+ word definitions)
+âœ… Product pages (unique specs, reviews)
+âœ… User profile pages (user-generated content)
 
 ### Penalty Risk (avoid at scale)
-❌ Location pages with only city name swapped
-❌ "Best [tool] for [industry]" without industry-specific value
-❌ "[Competitor] alternative" without real comparison data
-❌ AI-generated pages without human review and unique value
+âŒ Location pages with only city name swapped
+âŒ "Best [tool] for [industry]" without industry-specific value
+âŒ "[Competitor] alternative" without real comparison data
+âŒ AI-generated pages without human review and unique value
 
 ## Sitemap Format
 
@@ -153,3 +153,4 @@ Google documents three subtypes with their own rules, validate per-subtype:
 - `sitemap.xml` (or split files with index)
 - `STRUCTURE.md`: site architecture documentation
 - URL count and organization summary
+

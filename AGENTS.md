@@ -1,45 +1,45 @@
-# Claude SEO: Multi-Platform Agent Instructions
+# Antigravity SEO: Multi-Platform Agent Instructions
 
 > For **Cursor**, **Cursor Cloud Agents**, **Google Antigravity**, **Gemini CLI**,
 > **Grok Build**,
 > **OpenAI Codex CLI**, **Cline**, **Aider**, and any other agent harness that
 > reads project-root agent instructions.
 >
-> Claude Code users: see `CLAUDE.md` instead.
+> Google Antigravity users: see `Antigravity.md` instead.
 
 ## Cross-platform portability (v2.0.0)
 
 Every skill in `skills/*/SKILL.md` is authored to a portable subset of the
-Claude Code skill spec. Validate compatibility with your harness via:
+Google Antigravity skill spec. Validate compatibility with your harness via:
 
 ```bash
-./bin/claude-seo run portability_check.py
+./bin/antigravity-seo run portability_check.py
 ```
 
 The check confirms each `SKILL.md` has the minimum frontmatter every harness
 expects (`name`, `description`, optional `model`, optional `tools`) and warns
-on Claude-Code-specific features (`maxTurns`, multi-line tool list with
+on Antigravity-Code-specific features (`maxTurns`, multi-line tool list with
 descriptive comments) that other harnesses may ignore but do not reject.
 
 ### Per-harness notes
 
-| Harness | How to load claude-seo |
+| Harness | How to load antigravity-seo |
 |---|---|
 | **Cursor** | Symlink or copy `skills/` and `agents/` into `.cursor/rules/`. Commands are invoked as text prompts; the harness reads `SKILL.md` body as system context. |
 | **Cursor Cloud Agents** | Push the repo; Cloud Agents read `AGENTS.md` automatically at session start. |
 | **Google Antigravity** | Point the workspace at this repo root; Antigravity reads `AGENTS.md` first, falls back to `skills/`. |
 | **Gemini CLI** | `gemini init` in this repo loads `AGENTS.md`. Skills are activated via `activate_skill <name>` in conversation. |
-| **Grok Build** | Open this repository in Grok Build. It reads `AGENTS.md` and Claude Code compatible plugins and skills without a separate layout. Use `grok inspect` to verify discovery. See the [official compatibility guide](https://docs.x.ai/build/features/skills-plugins-marketplaces). |
-| **OpenAI Codex CLI** | Reads `AGENTS.md` from project root. Bash tools work as documented; some Claude-specific tool names (Read/Write/Edit) are aliased to Codex equivalents transparently. |
+| **Grok Build** | Open this repository in Grok Build. It reads `AGENTS.md` and Google Antigravity compatible plugins and skills without a separate layout. Use `grok inspect` to verify discovery. See the [official compatibility guide](https://docs.x.ai/build/features/skills-plugins-marketplaces). |
+| **OpenAI Codex CLI** | Reads `AGENTS.md` from project root. Bash tools work as documented; some Antigravity-specific tool names (Read/Write/Edit) are aliased to Codex equivalents transparently. |
 | **Cline** | Loads `AGENTS.md` from project root. Skills appear as system messages; subagent delegation falls back to in-context expansion. |
 | **Aider** | Reads `AGENTS.md` if present; otherwise falls back to README. Aider does not support sub-agent dispatch; the seo-* skills run inline. |
 
 ### Tool-name compatibility
 
-Where claude-seo skills mention Claude Code tools (`Read`, `Write`, `Edit`,
+Where antigravity-seo skills mention Google Antigravity tools (`Read`, `Write`, `Edit`,
 `Bash`, `Glob`, `Grep`, `WebFetch`), each harness typically has an equivalent:
 
-| Claude Code | Codex | Cline | Aider | Cursor / Antigravity |
+| Google Antigravity | Codex | Cline | Aider | Cursor / Antigravity |
 |---|---|---|---|---|
 | Read       | read_file        | read_file       | (inline)        | read |
 | Write      | write_file       | write_file      | /add then edit  | write |
@@ -54,7 +54,7 @@ in case a recipe needs a specific call.
 
 ## Overview
 
-Claude SEO is a Tier 4 SEO analysis skill with 25 sub-skills (21 core + 1 orchestrator +
+Antigravity SEO is a Tier 4 SEO analysis skill with 25 sub-skills (21 core + 1 orchestrator +
 1 framework integration + 2 extension mirrors), 18 sub-agents (15 core + 1 framework
 integration + 2 extension mirrors), and 53 Python execution scripts.
 
@@ -106,33 +106,36 @@ provide execution capabilities.
 **Running scripts directly** (Cursor doesn't have MCP):
 ```bash
 # Page fetching with SSRF protection
-./bin/claude-seo run fetch_page.py https://example.com
+./bin/antigravity-seo run fetch_page.py https://example.com
 
 # HTML parsing for SEO elements
-./bin/claude-seo run parse_html.py https://example.com
+./bin/antigravity-seo run parse_html.py https://example.com
 
 # PageSpeed Insights
-./bin/claude-seo run pagespeed_check.py https://example.com --json
+./bin/antigravity-seo run pagespeed_check.py https://example.com --json
 
 # Drift baseline
-./bin/claude-seo run drift_baseline.py https://example.com
+./bin/antigravity-seo run drift_baseline.py https://example.com
 
 # DataForSEO (requires credentials)
-DATAFORSEO_USERNAME=user DATAFORSEO_PASSWORD=pass ./bin/claude-seo run dataforseo_merchant.py search "keyword"
+DATAFORSEO_USERNAME=user DATAFORSEO_PASSWORD=pass ./bin/antigravity-seo run dataforseo_merchant.py search "keyword"
 ```
 
 **Cursor Cloud gotchas:**
 - SSL certificates may not resolve for some domains. Investigate the certificate issue rather than disabling verification.
-- Run bundled tools through `claude-seo`; never call the venv interpreter directly.
+- Run bundled tools through `antigravity-seo`; never call the venv interpreter directly.
 - Screenshots save to `/tmp/` not CWD. Check absolute paths.
 
 ## Using with Google Antigravity
 
-Antigravity discovers this project via `.claude-plugin/plugin.json`.
-Place the repo in `~/.gemini/antigravity/plugins/claude-seo/` or install via:
+Install globally into Antigravity (`~/.gemini/config/skills/`):
 
-```bash
-bash install.sh
+```powershell
+# Windows
+powershell -ExecutionPolicy Bypass -File install-antigravity.ps1
+
+# Unix / macOS / Linux
+bash install-antigravity.sh
 ```
 
 ## Architecture
@@ -175,10 +178,11 @@ extensions/                # 8 MCP extensions: DataForSEO, Firecrawl, Banana, Ah
 1. **Progressive Disclosure**: Read SKILL.md for routing, load references on demand
 2. **Industry Detection**: Auto-detect SaaS, e-commerce, local, publisher, agency
 3. **Security**: All scripts call `validate_url()` for SSRF protection
-4. **Config location**: `~/.config/claude-seo/` for API credentials
+4. **Config location**: `~/.config/antigravity-seo/` for API credentials
 
 ## Credits
 
 Created by [@AgriciDaniel](https://github.com/AgriciDaniel).
 v1.9.0 community contributions by Lutfiya Miller, Chris Muller, Florian Schmitz,
 Dan Colta, and Matej Marjanovic. See [CONTRIBUTORS.md](CONTRIBUTORS.md).
+

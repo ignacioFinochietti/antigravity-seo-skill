@@ -1,4 +1,4 @@
-# Installation Guide
+﻿# Installation Guide
 
 ## Prerequisites
 
@@ -16,8 +16,8 @@ Optional:
 The recommended path. Inside Claude Code:
 
 ```
-/plugin marketplace add AgriciDaniel/claude-seo
-/plugin install claude-seo@agricidaniel-claude-seo
+/plugin marketplace add AgriciDaniel/antigravity-seo
+/plugin install antigravity-seo@agricidaniel-antigravity-seo
 /seo setup
 ```
 
@@ -28,14 +28,14 @@ to Claude's persistent plugin data. Use `/seo doctor` for a read-only check.
 ### Manual Install (Unix, macOS, Linux)
 
 ```bash
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-bash claude-seo/install.sh
+git clone --depth 1 https://github.com/AgriciDaniel/antigravity-seo.git
+bash antigravity-seo/install.sh
 ```
 
 Review-then-run alternative:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh > install.sh
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/install.sh > install.sh
 cat install.sh        # review
 bash install.sh       # run when satisfied
 rm install.sh
@@ -44,8 +44,8 @@ rm install.sh
 ### Manual Install (Windows, PowerShell)
 
 ```powershell
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-powershell -ExecutionPolicy Bypass -File claude-seo\install.ps1
+git clone --depth 1 https://github.com/AgriciDaniel/antigravity-seo.git
+powershell -ExecutionPolicy Bypass -File antigravity-seo\install.ps1
 ```
 
 The Windows path uses `git clone` rather than `irm | iex` because Claude Code's own security guardrails flag piped remote-script execution. Inspect `install.ps1` before running.
@@ -55,8 +55,8 @@ The Windows path uses `git clone` rather than `irm | iex` because Claude Code's 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/AgriciDaniel/claude-seo.git
-cd claude-seo
+git clone https://github.com/AgriciDaniel/antigravity-seo.git
+cd antigravity-seo
 ```
 
 2. **Run the installer**
@@ -72,7 +72,7 @@ used by every skill. It creates `~/.claude/skills/seo/.venv/` and never falls
 back to global or user package installation.
 
 ```bash
-~/.claude/skills/seo/bin/claude-seo doctor
+~/.claude/skills/seo/bin/antigravity-seo doctor
 ```
 
 If core setup failed, rerun the inspected installer. If only Chromium failed,
@@ -87,7 +87,7 @@ The installer copies files to:
 | Main skill | `~/.claude/skills/seo/` |
 | Sub-skills | `~/.claude/skills/seo-*/` |
 | Subagents | `~/.claude/agents/seo-*.md` |
-| Runtime launcher | `~/.claude/skills/seo/bin/claude-seo` |
+| Runtime launcher | `~/.claude/skills/seo/bin/antigravity-seo` |
 | Isolated Python | `~/.claude/skills/seo/.venv/` |
 
 ## Verify Installation
@@ -111,15 +111,15 @@ You should see a help message or prompt for a URL.
 If installed as a plugin:
 
 ```
-/plugin uninstall claude-seo@agricidaniel-claude-seo
-/plugin marketplace remove AgriciDaniel/claude-seo
+/plugin uninstall antigravity-seo@agricidaniel-antigravity-seo
+/plugin marketplace remove AgriciDaniel/antigravity-seo
 ```
 
 If installed manually, run the uninstaller from a fresh clone:
 
 ```bash
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-bash claude-seo/uninstall.sh
+git clone --depth 1 https://github.com/AgriciDaniel/antigravity-seo.git
+bash antigravity-seo/uninstall.sh
 ```
 
 `uninstall.sh` removes all installed sub-skills, sub-agents, and the plugin's MCP entries from `~/.claude/settings.json`. Do not maintain a hand-coded `rm` list. The shipped uninstaller is the canonical source.
@@ -132,10 +132,10 @@ Caution: Prefer downloading, inspecting, then running remote scripts; the pipe-t
 
 ```bash
 # Uninstall current version
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/uninstall.sh | bash
 
 # Install new version
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/install.sh | bash
 ```
 
 ## Troubleshooting
@@ -155,7 +155,7 @@ If the file doesn't exist, re-run the installer.
 Run the managed setup again:
 
 ```bash
-~/.claude/skills/seo/bin/claude-seo setup
+~/.claude/skills/seo/bin/antigravity-seo setup
 ```
 
 ### Playwright screenshot errors
@@ -163,8 +163,8 @@ Run the managed setup again:
 Run the managed setup again and inspect the result:
 
 ```bash
-~/.claude/skills/seo/bin/claude-seo setup
-~/.claude/skills/seo/bin/claude-seo doctor
+~/.claude/skills/seo/bin/antigravity-seo setup
+~/.claude/skills/seo/bin/antigravity-seo doctor
 ```
 
 ### Permission errors on Unix
@@ -174,3 +174,4 @@ Make sure scripts are executable:
 ```bash
 chmod +x ~/.claude/skills/seo/scripts/*.py
 ```
+

@@ -1,21 +1,21 @@
-![Claude SEO cover: a Claude Code command palette with /seo audit, schema, geo, content, and backlinks commands over a dark CRT panel](assets/cover.svg)
+![Antigravity SEO cover: a Google Antigravity command palette with /seo audit, schema, geo, content, and backlinks commands over a dark CRT panel](assets/cover.svg)
 
 # Antigravity SEO: SEO Skill & Suite for Google Antigravity
 
-**Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Claude SEO](https://github.com/AgriciDaniel/claude-seo)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
+**Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Antigravity SEO](https://github.com/AgriciDaniel/antigravity-seo-skill)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
 
-[![CI](https://github.com/AgriciDaniel/claude-seo/actions/workflows/ci.yml/badge.svg)](https://github.com/AgriciDaniel/claude-seo/actions/workflows/ci.yml)
-[![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-Skill-blue)](https://claude.ai/claude-code)
+[![CI](https://github.com/AgriciDaniel/antigravity-seo-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/AgriciDaniel/antigravity-seo-skill/actions/workflows/ci.yml)
+[![Google Antigravity Skill](https://img.shields.io/badge/Antigravity%20Code-Skill-blue)](https://Antigravity.ai/Antigravity-code)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/github/v/release/AgriciDaniel/claude-seo)](https://github.com/AgriciDaniel/claude-seo/releases)
+[![Version](https://img.shields.io/github/v/release/AgriciDaniel/antigravity-seo-skill)](https://github.com/AgriciDaniel/antigravity-seo-skill/releases)
 [![Tests](https://img.shields.io/badge/tests-410%20passing-brightgreen)](tests/)
 [![Community](https://img.shields.io/badge/AI%20Marketing%20Hub-Pro%20community-purple)](https://www.skool.com/ai-marketing-hub-pro)
 
 > **Two versions of this skill.**
-> - 🌐 **Public open-source** → [`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/claude-seo): MIT, public releases, no membership. Use this if you want stable + downloadable.
-> - 🔒 **Community private mirror** → [`AI-Marketing-Hub/claude-seo`](https://github.com/AI-Marketing-Hub/claude-seo): early access to upcoming features and direct collaboration with the [AI Marketing Hub Pro](https://www.skool.com/ai-marketing-hub-pro) community. Requires membership.
+> - ðŸŒ **Public open-source** â†’ [`AgriciDaniel/antigravity-seo-skill`](https://github.com/AgriciDaniel/antigravity-seo-skill): MIT, public releases, no membership. Use this if you want stable + downloadable.
+> - ðŸ”’ **Community private mirror** â†’ [`AI-Marketing-Hub/antigravity-seo-skill`](https://github.com/AI-Marketing-Hub/antigravity-seo-skill): early access to upcoming features and direct collaboration with the [AI Marketing Hub Pro](https://www.skool.com/ai-marketing-hub-pro) community. Requires membership.
 
-### Why Claude SEO
+### Why Antigravity SEO
 
 - **AI-search first.** Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Question-based citability scoring, primary-source evidence on llms.txt, IPTC `TrainedAlgorithmicMedia` for AI-generated product images, agent-friendly page checks per [web.dev](https://web.dev/).
 - **Parallel execution.** Full site audits spawn up to 15 specialist agents simultaneously. Site-level audits complete in minutes rather than hours.
@@ -27,19 +27,19 @@
 
 Google Search Console for a site started 23 March 2026 and run on this workflow: total clicks and impressions across its first three months, through 12 June 2026.
 
-> Using Codex instead of Claude Code? Use [Codex SEO](https://github.com/AgriciDaniel/codex-seo), the Codex-first port with TOML agents, plugin packaging, deterministic runners, and the same SEO workflow surface.
+> Using Codex instead of Google Antigravity? Use [Codex SEO](https://github.com/AgriciDaniel/codex-seo), the Codex-first port with TOML agents, plugin packaging, deterministic runners, and the same SEO workflow surface.
 
 ## Who this is for
 
-- **SEO agencies running 5+ client sites.** Replace quarterly deep audits with weekly automated runs. Same team capacity, 4× audit cadence, every recommendation comes with a falsifiability check the client can verify.
+- **SEO agencies running 5+ client sites.** Replace quarterly deep audits with weekly automated runs. Same team capacity, 4Ã— audit cadence, every recommendation comes with a falsifiability check the client can verify.
 - **In-house SEO leads at SaaS / publisher / e-commerce companies.** Second-pair-of-eyes before executive reviews. Catches what GSC and Lighthouse hide: schema deprecation, AI-citability gaps, expired-domain heritage risk, parasite-SEO exposure, machine-translation drift.
 - **Freelance SEO consultants.** Anchor day-one client scope with a 15-minute audit and a real 0-100 score. Win the engagement with concrete proof of value before you spend an hour writing the proposal.
 
-![Claude SEO /seo command demo in Claude Code terminal](screenshots/seo-command-demo.gif)
+![Antigravity SEO /seo command demo in Google Antigravity terminal](screenshots/seo-command-demo.gif)
 
 Run a full audit and watch parallel agents fan out across the site:
 
-![Claude SEO /seo audit demo: parallel subagents producing a prioritized action plan](screenshots/seo-audit-demo.gif)
+![Antigravity SEO /seo audit demo: parallel subagents producing a prioritized action plan](screenshots/seo-audit-demo.gif)
 
 [Watch the full demo on YouTube](https://www.youtube.com/watch?v=COMnNlUakQk)
 
@@ -86,24 +86,11 @@ bash antigravity-seo-skill/install-antigravity.sh
 
 > **What does this do?** It installs all 25 sub-skills and specialist agents into Antigravity's global skill directory (`~/.gemini/config/skills/`), making `/seo` and all its commands directly invocable from any Antigravity conversation.
 
----
-
-### Claude Code Installation (Original Upstream Compatibility)
-
-```powershell
-# Windows (Claude Code)
-powershell -ExecutionPolicy Bypass -File install.ps1
-
-# Unix / macOS (Claude Code)
-bash install.sh
-```
-
 ## Quick Start
 
-```bash
-# Start Claude Code
-claude
+Run SEO commands directly in your Google Antigravity session:
 
+```bash
 # Full site audit: parallel sub-agents produce a prioritized action plan
 /seo audit https://example.com
 
@@ -122,7 +109,7 @@ claude
 
 ## Commands
 
-![Claude SEO sub-skill ecosystem: 25 modules grouped into 8 categories (audit, content, schema, technical, AI search, local + maps, commerce + intl, extensions) around the central orchestrator](assets/sub-skills.svg)
+![Antigravity SEO sub-skill ecosystem: 25 modules grouped into 8 categories (audit, content, schema, technical, AI search, local + maps, commerce + intl, extensions) around the central orchestrator](assets/sub-skills.svg)
 
 32 user-invocable `/seo` commands across the orchestrator, its sub-skills, and 8 MCP extensions. Full reference in [docs/COMMANDS.md](docs/COMMANDS.md).
 
@@ -163,23 +150,23 @@ claude
 
 ## Features
 
-### What Core Web Vitals does Claude SEO check?
+### What Core Web Vitals does Antigravity SEO check?
 
-Claude SEO measures the current three Core Web Vitals: **LCP** (Largest Contentful Paint, target under 2.5s), **INP** (Interaction to Next Paint, target under 200ms), and **CLS** (Cumulative Layout Shift, target under 0.1). [INP replaced FID](https://web.dev/articles/inp) on March 12, 2024; FID was removed from Chrome's field-data tools (CrUX API, PageSpeed Insights) on September 9, 2024 (Lighthouse is a lab tool and never reported FID), and Claude SEO never references FID. Field data comes from the Chrome User Experience Report (CrUX) when available; lab data falls back to Lighthouse via PageSpeed Insights. LCP can be decomposed into subparts (TTFB, load delay, load duration, render delay) via the `/seo google` CrUX integration to localize bottlenecks. Mobile and desktop are measured separately. CrUX History (25-week trend) is included in the Tier 0 free credential set.
+Antigravity SEO measures the current three Core Web Vitals: **LCP** (Largest Contentful Paint, target under 2.5s), **INP** (Interaction to Next Paint, target under 200ms), and **CLS** (Cumulative Layout Shift, target under 0.1). [INP replaced FID](https://web.dev/articles/inp) on March 12, 2024; FID was removed from Chrome's field-data tools (CrUX API, PageSpeed Insights) on September 9, 2024 (Lighthouse is a lab tool and never reported FID), and Antigravity SEO never references FID. Field data comes from the Chrome User Experience Report (CrUX) when available; lab data falls back to Lighthouse via PageSpeed Insights. LCP can be decomposed into subparts (TTFB, load delay, load duration, render delay) via the `/seo google` CrUX integration to localize bottlenecks. Mobile and desktop are measured separately. CrUX History (25-week trend) is included in the Tier 0 free credential set.
 
-### How does Claude SEO assess E-E-A-T?
+### How does Antigravity SEO assess E-E-A-T?
 
-E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is evaluated against the Search Quality Rater Guidelines, last updated September 2025 with YMYL expanded to include political and social topics. Experience signals: original research, case studies, first-hand photos. Expertise: author credentials and topical depth. Authoritativeness: external citations and brand mentions. Trustworthiness, the most heavily weighted of the four: contact info, secure HTTPS, transparent corrections, date stamps. Before scoring sub-factors, Claude SEO applies Google's own Who / How / Why heuristic from the [helpful-content guide](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). Generative AI content is fine if it meets Search Essentials; it crosses into spam when used to scale low-value pages, which `seo-content humanize` and `seo-content verify` are designed to detect.
+E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) is evaluated against the Search Quality Rater Guidelines, last updated September 2025 with YMYL expanded to include political and social topics. Experience signals: original research, case studies, first-hand photos. Expertise: author credentials and topical depth. Authoritativeness: external citations and brand mentions. Trustworthiness, the most heavily weighted of the four: contact info, secure HTTPS, transparent corrections, date stamps. Before scoring sub-factors, Antigravity SEO applies Google's own Who / How / Why heuristic from the [helpful-content guide](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). Generative AI content is fine if it meets Search Essentials; it crosses into spam when used to scale low-value pages, which `seo-content humanize` and `seo-content verify` are designed to detect.
 
-### What Schema.org types does Claude SEO support?
+### What Schema.org types does Antigravity SEO support?
 
-JSON-LD is the preferred format (Google's stated preference). Claude SEO detects, validates, and generates the active Schema.org types documented in [skills/seo/references/schema-types.md](skills/seo/references/schema-types.md), including organization, article, product, local, event, job, course, software/application, service, Q&A, and video patterns. FAQPage: Google stopped showing FAQ rich results for all sites on May 7, 2026; it has no Google rich-result benefit. Keep it only for non-Google or internal semantics if needed. Deprecated and never recommended: HowTo (rich results removed September 2023), SpecialAnnouncement (July 2025), ClaimReview, VehicleListing, EstimatedSalary, LearningVideo, CourseInfo carousel (all retired June 2025). Replacement guidance: [skills/seo-schema/references/deprecated-types-2024-2026.md](skills/seo-schema/references/deprecated-types-2024-2026.md).
+JSON-LD is the preferred format (Google's stated preference). Antigravity SEO detects, validates, and generates the active Schema.org types documented in [skills/seo/references/schema-types.md](skills/seo/references/schema-types.md), including organization, article, product, local, event, job, course, software/application, service, Q&A, and video patterns. FAQPage: Google stopped showing FAQ rich results for all sites on May 7, 2026; it has no Google rich-result benefit. Keep it only for non-Google or internal semantics if needed. Deprecated and never recommended: HowTo (rich results removed September 2023), SpecialAnnouncement (July 2025), ClaimReview, VehicleListing, EstimatedSalary, LearningVideo, CourseInfo carousel (all retired June 2025). Replacement guidance: [skills/seo-schema/references/deprecated-types-2024-2026.md](skills/seo-schema/references/deprecated-types-2024-2026.md).
 
-### How does Claude SEO optimize for AI search?
+### How does Antigravity SEO optimize for AI search?
 
-Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide), which states that "AEO" and "GEO" are rebranded labels for SEO. AI Overviews and AI Mode are grounded in the same ranking systems as classic Search; pages must be indexed and eligible for snippet display to appear in any AI feature. Claude SEO scores passage citability (optimal 134-167 word self-contained answer blocks), question-based heading hierarchy, attribution density, structured data coverage, and entity presence across Wikipedia, Reddit, YouTube, and LinkedIn. The `seo-geo` skill includes evidence-based reframes of three popular myths: llms.txt is not currently a citation lever ([primary-source evidence](skills/seo-geo/references/llmstxt-evidence.md)), content chunking is not required, and AI-specific keyword rewriting is unnecessary because synonym understanding is sufficient.
+Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide), which states that "AEO" and "GEO" are rebranded labels for SEO. AI Overviews and AI Mode are grounded in the same ranking systems as classic Search; pages must be indexed and eligible for snippet display to appear in any AI feature. Antigravity SEO scores passage citability (optimal 134-167 word self-contained answer blocks), question-based heading hierarchy, attribution density, structured data coverage, and entity presence across Wikipedia, Reddit, YouTube, and LinkedIn. The `seo-geo` skill includes evidence-based reframes of three popular myths: llms.txt is not currently a citation lever ([primary-source evidence](skills/seo-geo/references/llmstxt-evidence.md)), content chunking is not required, and AI-specific keyword rewriting is unnecessary because synonym understanding is sufficient.
 
-### Which Google SEO APIs does Claude SEO integrate with?
+### Which Google SEO APIs does Antigravity SEO integrate with?
 
 A 4-tier credential system lets you start with zero keys and add data as needed. Every tier delivers real value at its level:
 
@@ -190,18 +177,18 @@ A 4-tier credential system lets you start with zero keys and add data as needed.
 | 2 | + GA4 property config | + GA4 organic traffic, top landing pages, device / country breakdown |
 | 3 | + Ads developer token | + Keyword Planner search volume and competition data |
 
-PDF reports are generated via [WeasyPrint](https://weasyprint.org/) (A4 layout) with matplotlib charts at 200 DPI. Run `/seo google setup` for the credential wizard. All credentials live under `~/.config/claude-seo/` with `0o600` permissions; nothing is checked into the repo.
+PDF reports are generated via [WeasyPrint](https://weasyprint.org/) (A4 layout) with matplotlib charts at 200 DPI. Run `/seo google setup` for the credential wizard. All credentials live under `~/.config/antigravity-seo-skill/` with `0o600` permissions; nothing is checked into the repo.
 
-### How does Claude SEO handle local SEO?
+### How does Antigravity SEO handle local SEO?
 
-Three layers. **Google Business Profile signals**: categories, hours, photos, posts, products, attributes. **NAP consistency** across citations: name, address, phone matched against major directories with deviation flagging. **Review intelligence**: rating trends, sentiment, response coverage. For multi-location businesses, Claude SEO enforces a 30-page warning threshold and a 50-page hard stop to prevent doorway-page violations (configurable). The `/seo maps` workflow adds geo-grid rank tracking, GBP profile auditing, and competitor radius mapping. Local schema generation covers `LocalBusiness` with all required and recommended properties (geo coordinates, opening hours, areaServed). Phase F (v2) added a GBP deprecation linter that detects retired chat-field references and `.business.site` URLs.
+Three layers. **Google Business Profile signals**: categories, hours, photos, posts, products, attributes. **NAP consistency** across citations: name, address, phone matched against major directories with deviation flagging. **Review intelligence**: rating trends, sentiment, response coverage. For multi-location businesses, Antigravity SEO enforces a 30-page warning threshold and a 50-page hard stop to prevent doorway-page violations (configurable). The `/seo maps` workflow adds geo-grid rank tracking, GBP profile auditing, and competitor radius mapping. Local schema generation covers `LocalBusiness` with all required and recommended properties (geo coordinates, opening hours, areaServed). Phase F (v2) added a GBP deprecation linter that detects retired chat-field references and `.business.site` URLs.
 
 ## Compared to manual / agency / commercial tools
 
-| | Manual audit | Agency engagement | Commercial SEO audit tool | **Claude SEO** |
+| | Manual audit | Agency engagement | Commercial SEO audit tool | **Antigravity SEO** |
 |---|---|---|---|---|
 | **Time per audit** | 4-8 hrs senior SEO time | 1-3 weeks turnaround | 10-45 min crawl + report | **10-15 min** |
-| **Cost** | High (billable hours) | $2k-$15k+ project | $99-$999/mo subscription | **Free skill + Claude Code subscription** |
+| **Cost** | High (billable hours) | $2k-$15k+ project | $99-$999/mo subscription | **Free skill + Google Antigravity subscription** |
 | **Repeatable** | Inconsistent across analysts | Inconsistent across engagements | Yes | **Yes, deterministic + scriptable** |
 | **Output format** | Wall-of-findings PDF | Branded slide deck | Web dashboard, CSV exports | **Markdown + PDF + JSON, local files** |
 | **Custom benchmarks** | Manual per analyst | Agency-specific frameworks | Vendor-fixed | **Edit local SKILL.md** |
@@ -222,7 +209,7 @@ Three layers. **Google Business Profile signals**: categories, hours, photos, po
 
 ## Sample Output
 
-Claude SEO writes real markdown reports as its primary deliverable. Below is the first ~50 lines of a `/seo schema https://rankenstein.pro/about` audit verbatim. The actual structure, headers, and grading format the plugin produces follows.
+Antigravity SEO writes real markdown reports as its primary deliverable. Below is the first ~50 lines of a `/seo schema https://rankenstein.pro/about` audit verbatim. The actual structure, headers, and grading format the plugin produces follows.
 
 <details>
 <summary><code>SCHEMA-REPORT.md</code>: first 50 lines of a real audit</summary>
@@ -278,22 +265,22 @@ Other audit outputs follow the same shape: `FULL-AUDIT-REPORT.md` (umbrella audi
 
 ## Architecture
 
-![Claude SEO audit signal flow: /seo audit enters the orchestrator, fans out to 25 sub-skills and up to 15 parallel audit agents, and converges through the scoring engine into a prioritized report](assets/signal-flow.svg)
+![Antigravity SEO audit signal flow: /seo audit enters the orchestrator, fans out to 25 sub-skills and up to 15 parallel audit agents, and converges through the scoring engine into a prioritized report](assets/signal-flow.svg)
 
-The plugin follows the [Agent Skills standard](https://docs.claude.com/en/docs/claude-code/skills) with a 3-layer architecture (directive, orchestration, execution). Skills and agents are auto-discovered from `skills/seo-*/` and `agents/seo-*.md`. The orchestrator (`skills/seo/SKILL.md`) handles industry detection (SaaS, local, ecommerce, publisher, agency), parallel sub-agent dispatch up to 15 simultaneously, and synthesis through the [10-principle framework](#methodology) before emitting the action plan. Full architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+The plugin follows the [Agent Skills standard](https://docs.Antigravity.com/en/docs/Antigravity-code/skills) with a 3-layer architecture (directive, orchestration, execution). Skills and agents are auto-discovered from `skills/seo-*/` and `agents/seo-*.md`. The orchestrator (`skills/seo/SKILL.md`) handles industry detection (SaaS, local, ecommerce, publisher, agency), parallel sub-agent dispatch up to 15 simultaneously, and synthesis through the [10-principle framework](#methodology) before emitting the action plan. Full architecture: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Methodology
 
-![Claude SEO 10-principle methodology: PERCEIVE, ANALYZE, VALIDATE, and ACT phases with 10 principles arranged by quadrant](assets/framework.svg)
+![Antigravity SEO 10-principle methodology: PERCEIVE, ANALYZE, VALIDATE, and ACT phases with 10 principles arranged by quadrant](assets/framework.svg)
 
 Every audit walks 10 principles grouped into four phases. Each emitted recommendation carries four fields: the first-principle observation it rests on, its dependency relationship to other recommendations, a "how would we know this failed?" check, and a leading indicator to monitor.
 
 | Phase | Principles | What it does |
 |---|---|---|
-| **PERCEIVE** | OBSERVE (external) · OBSERVE (internal) · LISTEN | Collect raw signals; audit your own assumptions; read what the SERP, the brand voice, and the community actually say |
-| **ANALYZE** | THINK · CONNECT (lateral) · CONNECT (system) | Reduce to first principles; find non-obvious cross-skill links; sequence into a dependency graph |
-| **VALIDATE** | FEEL · ACCEPT | Pressure-test against UX, brand voice, operator capacity; surface falsifiability |
-| **ACT** | CREATE · GROW | Ship the artifact; set the feedback loop for the next audit |
+| **PERCEIVE** | OBSERVE (external) Â· OBSERVE (internal) Â· LISTEN | Collect raw signals; audit your own assumptions; read what the SERP, the brand voice, and the community actually say |
+| **ANALYZE** | THINK Â· CONNECT (lateral) Â· CONNECT (system) | Reduce to first principles; find non-obvious cross-skill links; sequence into a dependency graph |
+| **VALIDATE** | FEEL Â· ACCEPT | Pressure-test against UX, brand voice, operator capacity; surface falsifiability |
+| **ACT** | CREATE Â· GROW | Ship the artifact; set the feedback loop for the next audit |
 
 Full methodology: [skills/seo/references/thinking-framework.md](skills/seo/references/thinking-framework.md).
 
@@ -302,7 +289,7 @@ Full methodology: [skills/seo/references/thinking-framework.md](skills/seo/refer
 v2.0.0 is the largest release in the plugin's history. Six build phases, all shipped:
 
 - **Phase A: Headless rendering everywhere.** Shared `scripts/render_page.py` with Playwright Chromium plus [trafilatura](https://github.com/adbar/trafilatura) and [htmldate](https://github.com/adbar/htmldate). Every audit subagent gets SPA-aware fetching via `--render auto` (auto-detected on Next.js, React, Vue, Nuxt, Astro islands). Closes the SPA limitation that capped v1.x.
-- **Phase B: QRG-aligned content quality gates.** Filler detector and AI-pattern humanizer keyed to QRG §4.6.5 and §4.6.6, claim-verification scanner, expired-domain heritage check via WHOIS, primary-source Google updates changelog.
+- **Phase B: QRG-aligned content quality gates.** Filler detector and AI-pattern humanizer keyed to QRG Â§4.6.5 and Â§4.6.6, claim-verification scanner, expired-domain heritage check via WHOIS, primary-source Google updates changelog.
 - **Phase C: Technical and CWV depth.** LCP subparts via CrUX (TTFB, load delay, load duration, render delay), Speculation Rules and bfcache detection, IndexNow submitter for Bing / Yandex / Seznam / Naver, Unlighthouse multi-page Lighthouse wrapper.
 - **Phase D: Schema completeness.** Four explicit generators (Reservation, OrderAction, DiscussionForumPosting, ProfilePage), e-commerce schema validator (`hasMerchantReturnPolicy`, `shippingDetails`, `MemberProgram`, EU `energyEfficiencyClass`, ProductGroup variants), dual validator (Rich Results Test plus Schema Markup Validator).
 - **Phase E: AI search reframing and 5 new MCP extensions.** Ahrefs, SE Ranking (AI Share-of-Voice), Profound (LLM citation tracker), Bing Webmaster plus IndexNow, Unlighthouse. Plus the parasite-SEO risk scanner per Google's November 2024 [site reputation abuse policy](https://developers.google.com/search/blog/2024/11/site-reputation-abuse-update).
@@ -331,29 +318,27 @@ Two real boundaries worth being upfront about.
 ## Requirements
 
 - Python 3.10+
-- Claude Code CLI
-- Optional: Playwright Chromium — install.sh offers to install it (you can skip the prompt); needed only for SPA rendering and screenshots
+- Google Antigravity CLI
+- Optional: Playwright Chromium â€” install.sh offers to install it (you can skip the prompt); needed only for SPA rendering and screenshots
 - Optional: Google API credentials for enriched CWV / GSC / GA4 data (see `/seo google setup`)
 
 ## Uninstall
 
-```bash
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-bash claude-seo/uninstall.sh
+### Windows (PowerShell)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File uninstall-antigravity.ps1
 ```
 
-<details>
-<summary>One-liner (curl)</summary>
+### Unix / macOS / Linux
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/uninstall.sh | bash
+bash uninstall-antigravity.sh
 ```
-
-</details>
 
 ## Extensions
 
-Optional MCP servers add live data to the audit pipeline. Claude SEO ships extensions for 8 servers; the plugin core works without any of them.
+Optional MCP servers add live data to the audit pipeline. Antigravity SEO ships extensions for 8 servers; the plugin core works without any of them.
 
 ### DataForSEO
 
@@ -380,7 +365,7 @@ Full Firecrawl docs: [extensions/firecrawl/README.md](extensions/firecrawl/READM
 
 ### Banana: AI image generation
 
-SEO image generation (OG previews, blog heroes, product photos, infographics) via the [Claude Banana](https://github.com/AgriciDaniel/banana-claude) Creative Director pipeline.
+SEO image generation (OG previews, blog heroes, product photos, infographics) via the [Antigravity Banana](https://github.com/AgriciDaniel/banana-Antigravity) Creative Director pipeline.
 
 ```bash
 ./extensions/banana/install.sh
@@ -403,15 +388,15 @@ Setup walkthroughs live under `extensions/<name>/docs/`; integration notes: [doc
 
 ## Ecosystem
 
-Claude SEO is part of a family of Claude Code skills that interoperate cleanly:
+Antigravity SEO is part of a family of Google Antigravity skills that interoperate cleanly:
 
 | Skill | What it does | How it connects |
 |-------|-------------|-----------------|
-| [Claude SEO](https://github.com/AgriciDaniel/claude-seo) | SEO analysis, audits, schema, GEO | Core. Analyzes sites and generates action plans. |
-| [Claude Blog](https://github.com/AgriciDaniel/claude-blog) | Blog writing, optimization, scoring | Companion. Writes content optimized by SEO findings. |
-| [Claude Banana](https://github.com/AgriciDaniel/banana-claude) | AI image generation via Gemini | Shared. Generates images for SEO assets and blog posts. |
+| [Antigravity SEO](https://github.com/AgriciDaniel/antigravity-seo-skill) | SEO analysis, audits, schema, GEO | Core. Analyzes sites and generates action plans. |
+| [Antigravity Blog](https://github.com/AgriciDaniel/Antigravity-blog) | Blog writing, optimization, scoring | Companion. Writes content optimized by SEO findings. |
+| [Antigravity Banana](https://github.com/AgriciDaniel/banana-Antigravity) | AI image generation via Gemini | Shared. Generates images for SEO assets and blog posts. |
 | [Codex SEO](https://github.com/AgriciDaniel/codex-seo) | Codex-first SEO skill suite | Port. Same SEO system adapted for Codex skills, TOML agents, deterministic runners. |
-| [AI Marketing Claude](https://github.com/zubair-trabzada/ai-marketing-claude) | Copywriting, emails, social, ads, funnels, CRO | Community. Post-audit marketing action from SEO findings. |
+| [AI Marketing Antigravity](https://github.com/zubair-trabzada/ai-marketing-Antigravity) | Copywriting, emails, social, ads, funnels, CRO | Community. Post-audit marketing action from SEO findings. |
 | [FLOW](https://github.com/AgriciDaniel/flow) | Evidence-led SEO framework (41 AI prompts, CC BY 4.0) | Knowledge base. Powers `seo-flow` prompts. |
 
 **Workflow example:**
@@ -419,7 +404,7 @@ Claude SEO is part of a family of Claude Code skills that interoperate cleanly:
 1. `/seo audit https://example.com`: identify content gaps and technical issues
 2. `/seo backlinks https://example.com`: analyze link profile and competitor gaps
 3. `/seo geo https://example.com/blog/post`: score AI-citation readiness
-4. `/blog write "target keyword"`: create SEO-optimized blog post (Claude Blog)
+4. `/blog write "target keyword"`: create SEO-optimized blog post (Antigravity Blog)
 5. `/seo image-gen hero "blog topic"`: generate hero image (Banana extension)
 
 ## Documentation
@@ -427,36 +412,36 @@ Claude SEO is part of a family of Claude Code skills that interoperate cleanly:
 - [Installation Guide](docs/INSTALLATION.md)
 - [Commands Reference](docs/COMMANDS.md): every `/seo` command in depth
 - [Architecture](docs/ARCHITECTURE.md): 3-layer design, auto-discovery, parallel dispatch
-- [Migration v1 → v2](docs/MIGRATION-v1-to-v2.md): breaking changes, six phases of work
+- [Migration v1 â†’ v2](docs/MIGRATION-v1-to-v2.md): breaking changes, six phases of work
 - [MCP Integration](docs/MCP-INTEGRATION.md): integration notes; extension setup lives under `extensions/<name>/docs/`
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Contributors](CONTRIBUTORS.md): community credits
 
 ## FAQ
 
-### What is Claude SEO?
+### What is Antigravity SEO?
 
-Claude SEO is an open-source SEO analysis plugin for Claude Code. It runs 25 sub-skills and 18 specialist agents in parallel across technical SEO, content quality, Schema.org markup, AI search optimization, local SEO, e-commerce, and international SEO. Audits produce a prioritized action plan where each recommendation carries the first-principle observation it rests on, its dependency relationship to other recommendations, a "how would we know this failed?" check, and a leading indicator. The plugin is MIT-licensed, ships zero proprietary tracking, and works without third-party API enrichment; audits still contact the target URLs you analyze. Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) and the September 2025 Quality Rater Guidelines.
+Antigravity SEO is an open-source SEO analysis plugin for Google Antigravity. It runs 25 sub-skills and 18 specialist agents in parallel across technical SEO, content quality, Schema.org markup, AI search optimization, local SEO, e-commerce, and international SEO. Audits produce a prioritized action plan where each recommendation carries the first-principle observation it rests on, its dependency relationship to other recommendations, a "how would we know this failed?" check, and a leading indicator. The plugin is MIT-licensed, ships zero proprietary tracking, and works without third-party API enrichment; audits still contact the target URLs you analyze. Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) and the September 2025 Quality Rater Guidelines.
 
-### How is Claude SEO different from Screaming Frog or Ahrefs Site Audit?
+### How is Antigravity SEO different from Screaming Frog or Ahrefs Site Audit?
 
-Different surface area, different tradeoffs. **Screaming Frog** crawls deeper and faster at the link-graph level; it is purpose-built as a crawler and Claude SEO does not attempt to replace it. **Ahrefs Site Audit** brings a proprietary backlink index and link intelligence; Claude SEO integrates with Ahrefs via its MCP extension rather than competing. Where Claude SEO leads: conversational LLM-native workflow, recommendation falsifiability (every finding carries an explicit failure-mode check), open-source MIT licensing with zero per-domain pricing, AI search optimization aligned with Google's primary-source guidance, and primary-source schema-deprecation tracking. Use Screaming Frog or Ahrefs for what they are best at; use Claude SEO when you want LLM-driven synthesis, conversational iteration, and AI-search-first audits in the same environment as your other Claude Code workflows.
+Different surface area, different tradeoffs. **Screaming Frog** crawls deeper and faster at the link-graph level; it is purpose-built as a crawler and Antigravity SEO does not attempt to replace it. **Ahrefs Site Audit** brings a proprietary backlink index and link intelligence; Antigravity SEO integrates with Ahrefs via its MCP extension rather than competing. Where Antigravity SEO leads: conversational LLM-native workflow, recommendation falsifiability (every finding carries an explicit failure-mode check), open-source MIT licensing with zero per-domain pricing, AI search optimization aligned with Google's primary-source guidance, and primary-source schema-deprecation tracking. Use Screaming Frog or Ahrefs for what they are best at; use Antigravity SEO when you want LLM-driven synthesis, conversational iteration, and AI-search-first audits in the same environment as your other Google Antigravity workflows.
 
-### Does Claude SEO work on single-page applications (Next.js, React, Vue)?
+### Does Antigravity SEO work on single-page applications (Next.js, React, Vue)?
 
 Yes. Phase A of v2 shipped a shared headless renderer (`scripts/render_page.py`) backed by Playwright Chromium. Audit subagents call `render_page.py --mode auto`, which auto-detects SPA hallmarks (empty `<div id="root">` shells, single bundle script, hydration markers) and switches to a rendered fetch. The lower-level `scripts/fetch_page.py` wrapper supports `--render auto` as an opt-in wrapper mode; its default is `--render never` for raw HTTP. Use `render_page.py --mode always` or `fetch_page.py --render always` to force rendering. Content extraction uses [trafilatura](https://github.com/adbar/trafilatura) for boilerplate removal. Publication dates come from [htmldate](https://github.com/adbar/htmldate). Known nuance: pages with scroll-bound hydration or post-interaction content fetches still produce noisy findings; see the [Limitations](#limitations) section for the recommended `seo-visual` cross-check workflow on those edge cases.
 
-### What Google APIs does Claude SEO use, and are they required?
+### What Google APIs does Antigravity SEO use, and are they required?
 
-None are required. Claude SEO is fully functional with zero API keys. A 4-tier credential system lets you upgrade gradually: Tier 0 (API key only) unlocks PageSpeed Insights, CrUX, and CrUX History (25-week trend data). Tier 1 (+ OAuth or service account) adds Search Console with queries, URL Inspection, sitemap status, and the Indexing API for eligible JobPosting pages or BroadcastEvent in VideoObject pages; the API does not guarantee indexing. Tier 2 (+ GA4 property config) adds organic traffic, top landing pages, and device / country breakdowns. Tier 3 (+ Ads developer token) adds Keyword Planner search volume and competition data. The credential setup wizard runs via `/seo google setup`. All credentials live under `~/.config/claude-seo/` with `0o600` file permissions; nothing is checked into the repo and nothing is transmitted beyond Google's own endpoints.
+None are required. Antigravity SEO is fully functional with zero API keys. A 4-tier credential system lets you upgrade gradually: Tier 0 (API key only) unlocks PageSpeed Insights, CrUX, and CrUX History (25-week trend data). Tier 1 (+ OAuth or service account) adds Search Console with queries, URL Inspection, sitemap status, and the Indexing API for eligible JobPosting pages or BroadcastEvent in VideoObject pages; the API does not guarantee indexing. Tier 2 (+ GA4 property config) adds organic traffic, top landing pages, and device / country breakdowns. Tier 3 (+ Ads developer token) adds Keyword Planner search volume and competition data. The credential setup wizard runs via `/seo google setup`. All credentials live under `~/.config/antigravity-seo-skill/` with `0o600` file permissions; nothing is checked into the repo and nothing is transmitted beyond Google's own endpoints.
 
-### Is Claude SEO free?
+### Is Antigravity SEO free?
 
 Yes. MIT licensed, fully open source, no per-domain pricing, no telemetry, no API quotas imposed by the plugin itself. The core plugin and all 25 sub-skills work without any paid service. Some optional MCP extensions wrap paid services (DataForSEO, Ahrefs, Profound, SE Ranking) where you bring your own account credentials; their use is opt-in and the plugin works fully without them. Google APIs (PageSpeed Insights, Search Console, Indexing, GA4) are free from Google with normal account quota limits and require your own credentials. If you want commercial support or enterprise features beyond the open-source plugin, that is not part of this project.
 
-### How is Claude SEO different from regular SEO tools when it comes to AI search?
+### How is Antigravity SEO different from regular SEO tools when it comes to AI search?
 
-Most SEO tools treat AI search as a separate optimization discipline. Claude SEO follows [Google's own position](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) that AEO and GEO are rebranded labels for SEO. AI Overviews and AI Mode are grounded in the same ranking systems as classic Search; the eligibility floor is normal indexation. Claude SEO scores passage citability (134-167 word self-contained answer blocks), question-based heading hierarchy, attribution density, and entity presence across Wikipedia, Reddit, YouTube, and LinkedIn. It explicitly rejects three influencer myths: llms.txt as a citation lever, content chunking for AI, and AI-specific keyword rewriting. For commerce sites, Claude SEO audits the IPTC `TrainedAlgorithmicMedia` requirement on AI-generated product images per Google Merchant Center policy.
+Most SEO tools treat AI search as a separate optimization discipline. Antigravity SEO follows [Google's own position](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) that AEO and GEO are rebranded labels for SEO. AI Overviews and AI Mode are grounded in the same ranking systems as classic Search; the eligibility floor is normal indexation. Antigravity SEO scores passage citability (134-167 word self-contained answer blocks), question-based heading hierarchy, attribution density, and entity presence across Wikipedia, Reddit, YouTube, and LinkedIn. It explicitly rejects three influencer myths: llms.txt as a citation lever, content chunking for AI, and AI-specific keyword rewriting. For commerce sites, Antigravity SEO audits the IPTC `TrainedAlgorithmicMedia` requirement on AI-generated product images per Google Merchant Center policy.
 
 ## Community Contributors
 
@@ -464,11 +449,11 @@ v1.9.0 includes contributions from the [AI Marketing Hub](https://www.skool.com/
 
 | Contributor | Contribution |
 |------------|-------------|
-| **Lutfiya Miller** (Winner) | Semantic Cluster Engine → `seo-cluster` |
-| **Florian Schmitz** | SXO Skill → `seo-sxo` |
-| **Dan Colta** | SEO Drift Monitor → `seo-drift` |
-| **Chris Muller** | Multi-lingual SEO → `seo-hreflang` enhancements |
-| **Matej Marjanovic** | E-commerce + DataForSEO Cost Config → `seo-ecommerce` + cost guardrails |
+| **Lutfiya Miller** (Winner) | Semantic Cluster Engine â†’ `seo-cluster` |
+| **Florian Schmitz** | SXO Skill â†’ `seo-sxo` |
+| **Dan Colta** | SEO Drift Monitor â†’ `seo-drift` |
+| **Chris Muller** | Multi-lingual SEO â†’ `seo-hreflang` enhancements |
+| **Matej Marjanovic** | E-commerce + DataForSEO Cost Config â†’ `seo-ecommerce` + cost guardrails |
 
 See [CONTRIBUTORS.md](CONTRIBUTORS.md) for full details and original repo links.
 
@@ -484,10 +469,11 @@ Contributions welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before sub
 
 ## Author
 
-Built by **[Agrici Daniel](https://agricidaniel.com/about)**, AI Workflow Architect. Single maintainer, open to community contributions via the [Pro Skool community](https://www.skool.com/ai-marketing-hub-pro). Background in marketing automation, AI-assisted content workflows, and open-source tooling for Claude Code.
+Built by **[Agrici Daniel](https://agricidaniel.com/about)**, AI Workflow Architect. Single maintainer, open to community contributions via the [Pro Skool community](https://www.skool.com/ai-marketing-hub-pro). Background in marketing automation, AI-assisted content workflows, and open-source tooling for Google Antigravity.
 
 - [Blog](https://agricidaniel.com/blog): deep dives on AI marketing automation
 - [AI Marketing Hub (free)](https://www.skool.com/ai-marketing-hub): open community
 - [AI Marketing Hub Pro](https://www.skool.com/ai-marketing-hub-pro): Pro community, early access to this skill
 - [YouTube](https://www.youtube.com/@AgriciDaniel): tutorials and demos
 - [GitHub](https://github.com/AgriciDaniel): all open-source tools
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-image-gen
 description: SEO image analyst. Audits existing OG/social preview images, identifies missing or low-quality images, and creates an image generation plan with prompts for key pages. Does NOT auto-generate images.
 model: sonnet
@@ -24,7 +24,7 @@ For each audited page, evaluate:
 
 ## Output Format
 
-Match existing claude-seo patterns:
+Match existing antigravity-seo patterns:
 
 ### Image Audit Summary
 
@@ -59,3 +59,4 @@ Priority levels: Critical > High > Medium > Low
 - If nanobanana-mcp is not available, still audit existing images but note that generation requires the banana extension
 - Report errors clearly with actionable next steps
 - Note data source as "Image Audit (static analysis)" to distinguish from live checks
+

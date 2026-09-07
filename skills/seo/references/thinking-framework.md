@@ -1,6 +1,6 @@
-# The 10-Principle Audit Synthesis Framework
+﻿# The 10-Principle Audit Synthesis Framework
 
-This is the canonical methodology claude-seo uses to assemble raw findings
+This is the canonical methodology antigravity-seo uses to assemble raw findings
 into strategically coherent recommendations. Every full-site audit and
 deep-page analysis walks through these ten principles before producing the
 final action plan.
@@ -9,10 +9,10 @@ The principles group into four phases:
 
 | Phase | Principles |
 |---|---|
-| **PERCEIVE** | OBSERVE (external) · OBSERVE (internal) · LISTEN |
-| **ANALYZE** | THINK · CONNECT (lateral) · CONNECT (system) |
-| **VALIDATE** | FEEL · ACCEPT |
-| **ACT** | CREATE · GROW |
+| **PERCEIVE** | OBSERVE (external) Â· OBSERVE (internal) Â· LISTEN |
+| **ANALYZE** | THINK Â· CONNECT (lateral) Â· CONNECT (system) |
+| **VALIDATE** | FEEL Â· ACCEPT |
+| **ACT** | CREATE Â· GROW |
 
 A recommendation that has not passed through all four phases is a finding,
 not a recommendation.
@@ -21,27 +21,27 @@ not a recommendation.
 
 ## PERCEIVE
 
-### 1. OBSERVE — the external input
+### 1. OBSERVE â€” the external input
 
 Collect signals without interpreting them. For a website audit this means:
 
-- Raw HTML + rendered HTML (via `claude-seo run render_page.py`)
+- Raw HTML + rendered HTML (via `antigravity-seo run render_page.py`)
 - Schema.org markup actually present (via `seo-schema`)
 - SERP visibility for the site's published topics (via `seo-dataforseo` /
   Google APIs when available)
 - Backlink + brand-mention landscape (via `seo-backlinks`)
-- Core Web Vitals field data from CrUX (via `claude-seo run pagespeed_check.py`)
+- Core Web Vitals field data from CrUX (via `antigravity-seo run pagespeed_check.py`)
 - AI-search citation patterns (via `seo-geo`)
 - Competitor pages on the target's primary keywords
 
 **Discipline:** do not score yet. Do not classify yet. Just collect.
 
-### 2. OBSERVE — internal metacognition
+### 2. OBSERVE â€” internal metacognition
 
 Audit your own assumptions about the site before assembling
 recommendations. Common assumption traps in SEO:
 
-- Assuming the homepage represents the site (often it doesn't —
+- Assuming the homepage represents the site (often it doesn't â€”
   programmatic pages or category pages drive traffic)
 - Assuming "low traffic" means "low value" (intent-matched low-volume can
   outconvert high-volume informational queries)
@@ -56,10 +56,10 @@ recommendations. Common assumption traps in SEO:
 this resting on?" If the answer surprises you, surface the assumption in
 the report so the user can reject it explicitly.
 
-### 3. LISTEN — active receptivity
+### 3. LISTEN â€” active receptivity
 
 Read what the site, user intent, and platform signals are actually saying
-— not what you expect them to say.
+â€” not what you expect them to say.
 
 - Read the page's existing copy before recommending a rewrite. The brand
   voice is data.
@@ -68,7 +68,7 @@ Read what the site, user intent, and platform signals are actually saying
 - Read user reviews / community discussions / Reddit threads for what
   customers actually ask about (versus what the marketing team thinks
   they ask about).
-- Read the user's prior conversations + memory if available — they may
+- Read the user's prior conversations + memory if available â€” they may
   have ruled out approaches already.
 
 **Discipline:** if a recommendation contradicts the SERP for the same
@@ -79,7 +79,7 @@ exception.
 
 ## ANALYZE
 
-### 4. THINK — critical processing
+### 4. THINK â€” critical processing
 
 Reduce the findings to first principles:
 
@@ -90,8 +90,8 @@ Reduce the findings to first principles:
   shown with a snippet)? If the page is not indexed, no AI work
   matters yet.
 - What is the **highest-leverage constraint** binding the site right
-  now? (Often: a single technical defect — non-indexable, slow LCP,
-  missing canonical — that gates everything else.)
+  now? (Often: a single technical defect â€” non-indexable, slow LCP,
+  missing canonical â€” that gates everything else.)
 - What does **Google's primary-source guidance** say about the
   recommendation? When community claims and Google contradict, defer
   to Google (see `skills/seo-geo/references/google-ai-optimization-guide.md`).
@@ -99,26 +99,26 @@ Reduce the findings to first principles:
 **Discipline:** the highest-leverage constraint goes first in the action
 plan, even if it's less interesting than the "growth" recommendations.
 
-### 5. CONNECT — lateral / associative
+### 5. CONNECT â€” lateral / associative
 
 Combine findings from sub-skills that the user wouldn't naturally pair.
 Examples that frequently produce the highest-value recommendations:
 
-- `seo-content` thin-content finding × `seo-cluster` SERP-overlap data →
+- `seo-content` thin-content finding Ã— `seo-cluster` SERP-overlap data â†’
   consolidate three weak pages into one cluster hub.
-- `seo-schema` missing Product schema × `seo-ecommerce` UCP-not-declared
-  → both close the same agent-era buying gap; bundle as one
+- `seo-schema` missing Product schema Ã— `seo-ecommerce` UCP-not-declared
+  â†’ both close the same agent-era buying gap; bundle as one
   recommendation.
-- `seo-geo` low AI-citation rate × `seo-backlinks` brand-mention
-  underweight → mentions matter 3× more than backlinks for AI
+- `seo-geo` low AI-citation rate Ã— `seo-backlinks` brand-mention
+  underweight â†’ mentions matter 3Ã— more than backlinks for AI
   citations; reframe link-building budget into PR / Reddit / YouTube.
-- `seo-technical` SPA detection × `seo-content` missing main-content
-  → JS-blocked content is the upstream cause of the content finding.
+- `seo-technical` SPA detection Ã— `seo-content` missing main-content
+  â†’ JS-blocked content is the upstream cause of the content finding.
 
 **Discipline:** any single sub-skill finding that survives connection
-unchanged should be skeptical — it might be a symptom, not a cause.
+unchanged should be skeptical â€” it might be a symptom, not a cause.
 
-### 6. CONNECT — system orchestration
+### 6. CONNECT â€” system orchestration
 
 Wire the validated recommendations into an executable sequence:
 
@@ -136,7 +136,7 @@ two recommendations cannot be done in either order, say so.
 
 ## VALIDATE
 
-### 7. FEEL — emotional intelligence + intuition
+### 7. FEEL â€” emotional intelligence + intuition
 
 Pure-logic recommendations break on contact with the actual reader /
 business / stakeholder. Pressure-test against:
@@ -156,7 +156,7 @@ business / stakeholder. Pressure-test against:
 **Discipline:** if you can't articulate the human cost of a
 recommendation, you haven't fully validated it.
 
-### 8. ACCEPT — intellectual humility
+### 8. ACCEPT â€” intellectual humility
 
 Each recommendation should carry the falsifiability that comes with
 honesty:
@@ -166,7 +166,7 @@ honesty:
 - If the user has tried this and it didn't work before, surface that.
   Don't re-recommend the same thing.
 - If a constraint cannot be removed (legal, brand, technical), the
-  recommendation has to pivot — not double down.
+  recommendation has to pivot â€” not double down.
 - If a v1 recommendation is now stale because Google's guidance shifted,
   retract it explicitly.
 
@@ -177,7 +177,7 @@ failed?" line. No invisible bets.
 
 ## ACT
 
-### 9. CREATE — generative output
+### 9. CREATE â€” generative output
 
 Stop strategizing. Produce the artifact:
 
@@ -185,13 +185,13 @@ Stop strategizing. Produce the artifact:
   measurable outcomes.
 - Generated schema JSON-LD ready to paste into the site.
 - A content brief with target keywords, outline, and internal links.
-- A PDF via `claude-seo run google_report.py` when the user asks for one.
+- A PDF via `antigravity-seo run google_report.py` when the user asks for one.
 - The smallest implementation of the highest-leverage recommendation,
   not the full plan.
 
 **Discipline:** ship the artifact. Analysis paralysis is the enemy.
 
-### 10. GROW — iterative loop
+### 10. GROW â€” iterative loop
 
 The audit is a snapshot, not a verdict. Build the feedback loop:
 
@@ -202,7 +202,7 @@ The audit is a snapshot, not a verdict. Build the feedback loop:
   Reddit / YouTube).
 - Schedule a re-audit cadence appropriate to the site's velocity
   (weekly for a high-churn ecommerce; quarterly for a B2B SaaS).
-- Surface what claude-seo itself **could not measure** (offline
+- Surface what antigravity-seo itself **could not measure** (offline
   conversion, brand lift, customer interviews) so the human closes
   those loops.
 
@@ -214,25 +214,26 @@ audit should look for.
 ## How to invoke the framework
 
 Every full-site audit (`/seo audit`) and deep-page audit (`/seo page`)
-walks through PERCEIVE → ANALYZE → VALIDATE → ACT before emitting the
+walks through PERCEIVE â†’ ANALYZE â†’ VALIDATE â†’ ACT before emitting the
 action plan. The Critical / High / Medium / Low priority bucketing
 happens **after** the validation phase, not instead of it.
 
 Single-purpose commands (`/seo schema`, `/seo images`, `/seo technical`,
 etc.) can skip the full loop when the user is asking a narrow question
-— but their recommendations should still pass at least THINK + ACCEPT
+â€” but their recommendations should still pass at least THINK + ACCEPT
 before being emitted (does this rest on a sound first principle, and is
 the falsifiability surfaced?).
 
 ## When to escalate to the user
 
-These principles are claude-seo's; they are not the user's. Surface them
+These principles are antigravity-seo's; they are not the user's. Surface them
 for the user when:
 
 - A recommendation requires accepting an assumption you'd rather not own
-  (CONNECT-lateral often produces these — surface the link and let the
+  (CONNECT-lateral often produces these â€” surface the link and let the
   user confirm).
 - The validation phase flagged a brand-voice / operator-capacity / hard
   constraint you can see but cannot resolve.
 - The audit found no upstream constraint and is recommending an
   optimization that may be premature.
+

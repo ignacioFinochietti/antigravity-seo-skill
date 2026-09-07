@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-technical
 description: >
   Technical SEO audit across 9 categories: crawlability, indexability, security,
@@ -20,7 +20,7 @@ metadata:
 
 ### 1. Crawlability
 - robots.txt: exists, valid, not blocking important resources
-- XML sitemap: run `claude-seo run sitemap_discovery.py <url> --json`; require a
+- XML sitemap: run `antigravity-seo run sitemap_discovery.py <url> --json`; require a
   valid entry in `found`, and report stale or unsafe robots.txt declarations
   separately from working fallback locations
 - Noindex tags: intentional vs accidental
@@ -176,7 +176,7 @@ It is also available through Lighthouse CLI with
 
 ```bash
 # Render with Playwright + capture accessibility tree, then score
-claude-seo run agent_ux_check.py https://example.com --json
+antigravity-seo run agent_ux_check.py https://example.com --json
 ```
 
 The scanner outputs an Agent-UX score (0-100) plus itemized issues:
@@ -188,7 +188,7 @@ The scanner outputs an Agent-UX score (0-100) plus itemized issues:
 The accessibility-tree snapshot uses Chromium's
 `Accessibility.getFullAXTree` CDP command through Playwright. To capture the
 tree without scoring, use
-`claude-seo run render_page.py <url> --a11y-tree --json`.
+`antigravity-seo run render_page.py <url> --a11y-tree --json`.
 
 Surface findings as **opportunities**, not failures; don't gate audits on a
 sub-100 Agent-UX score. WebMCP origin-trial/sign-up status needs verification,
@@ -222,7 +222,7 @@ If DataForSEO MCP tools are available, use `on_page_instant_pages` for real page
 
 ## Google API Integration (Optional)
 
-If Google API credentials are configured, use `claude-seo run pagespeed_check.py <url> --json` for real PSI + CrUX field data (replaces lab-only CWV estimates), `claude-seo run crux_history.py <url> --json` for 25-week CWV trends, and `claude-seo run gsc_inspect.py <url> --json` for real indexation status per URL.
+If Google API credentials are configured, use `antigravity-seo run pagespeed_check.py <url> --json` for real PSI + CrUX field data (replaces lab-only CWV estimates), `antigravity-seo run crux_history.py <url> --json` for 25-week CWV trends, and `antigravity-seo run gsc_inspect.py <url> --json` for real indexation status per URL.
 
 ## Error Handling
 
@@ -232,3 +232,4 @@ If Google API credentials are configured, use `claude-seo run pagespeed_check.py
 | robots.txt not found | Note that no robots.txt was detected at the root domain. Recommend creating one with appropriate directives. Continue audit on remaining categories. |
 | HTTPS not configured | Flag as a critical issue. Report whether HTTP is served without redirect, mixed content exists, or SSL certificate is missing/expired. |
 | Core Web Vitals data unavailable | Note that CrUX data is not available (common for low-traffic sites). Suggest using Lighthouse lab data as a proxy and recommend increasing traffic before re-testing. |
+

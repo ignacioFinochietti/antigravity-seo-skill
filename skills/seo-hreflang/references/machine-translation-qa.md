@@ -1,8 +1,8 @@
-# Machine-translation QA flag (September 11, 2025 QRG)
+﻿# Machine-translation QA flag (September 11, 2025 QRG)
 
 Google's January 23, 2025 Quality Rater Guidelines update added
 explicit language about **machine-translated content with no human
-review** as a form of scaled content abuse (§4.6.5). This is also the
+review** as a form of scaled content abuse (Â§4.6.5). This is also the
 **enforceable webmaster-facing spam policy** (updated 2026-05-15), which
 names "automated transformations like synonymizing, **translating**, or
 other obfuscation techniques" as scaled content abuse:
@@ -12,9 +12,9 @@ https://developers.google.com/search/docs/essentials/spam-policies
 > way to produce many pages that add little-to-no value."
 
 Machine-translated content is fine **when reviewed by a human
-speaker and corrected**. Untranslated MT — or "lightly post-edited"
+speaker and corrected**. Untranslated MT â€” or "lightly post-edited"
 output that still contains hallucinated terms, wrong gender/number
-agreement, or untranslated proper nouns — is treated as scaled
+agreement, or untranslated proper nouns â€” is treated as scaled
 content abuse.
 
 ## Signals the seo-hreflang audit should surface
@@ -23,7 +23,7 @@ content abuse.
 |---|---|---|
 | Multiple `hreflang` alternates point to URLs whose content is identical except for header chrome | Critical | Indicates the body wasn't translated; just template wrapped. |
 | `lang="xx"` attribute on `<html>` doesn't match the body language | High | Translation pipeline output without a final QA step. |
-| Auto-translated `<meta name="description">` longer than 160 chars (untrimmed) | Medium | The translator overran the snippet limit — no human reviewer caught it. |
+| Auto-translated `<meta name="description">` longer than 160 chars (untrimmed) | Medium | The translator overran the snippet limit â€” no human reviewer caught it. |
 | `lang` attribute is `auto` or missing entirely | Medium | Pages that don't declare their language confuse hreflang + AI crawlers. |
 | Untranslated proper nouns or product names sprinkled in body | Low (heuristic) | Common MT failure mode; hard to detect automatically. |
 | Schema.org `inLanguage` field absent or wrong | Medium | Multi-language audits should cross-check `inLanguage` vs. body. |
@@ -33,7 +33,7 @@ content abuse.
 - Sites that have a few MT pages clearly labelled as MT (a
   human-translation-fallback pattern). Google's QRG explicitly
   permits MT *when honestly labelled and clearly scoped*.
-- Machine-translated UI strings — those are i18n, not "content".
+- Machine-translated UI strings â€” those are i18n, not "content".
 - Content with `lang="auto"` if the audit can't fetch a fallback
   signal (be conservative; don't claim what we can't verify).
 
@@ -42,7 +42,7 @@ content abuse.
 - For per-page hreflang validation, stay inside `seo-hreflang`.
 - For broader scaled-content scoring (entropy of translated pages,
   AI-pattern detection in body), defer to `seo-content` via
-  `claude-seo run content_quality.py`.
+  `antigravity-seo run content_quality.py`.
 - For "is this translated by Google's own auto-translate widget"
   detection, look for the `.goog-te-banner-frame` iframe. There is **no
   per-mechanism exemption**: in June 2025 Google removed the
@@ -58,3 +58,4 @@ content abuse.
   when reviewed by a human; bulk MT without review is abuse.
 
 Last verified: 2026-07-09.
+

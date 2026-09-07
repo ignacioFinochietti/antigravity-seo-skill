@@ -1,8 +1,8 @@
----
+﻿---
 name: seo-flow
 description: >
-  FLOW framework integration: evidence-led SEO using the Find → Leverage →
-  Optimize → Win loop. Surfaces stage-specific AI prompts from the FLOW
+  FLOW framework integration: evidence-led SEO using the Find â†’ Leverage â†’
+  Optimize â†’ Win loop. Surfaces stage-specific AI prompts from the FLOW
   knowledge base (41 prompts, CC BY 4.0). Use when user says "FLOW", "FLOW
   framework", "seo flow", "evidence-led SEO", "find leverage optimize win",
   or wants stage-specific SEO prompts.
@@ -15,13 +15,13 @@ metadata:
   category: seo
 ---
 
-# FLOW Framework: Find · Leverage · Optimize · Win
+# FLOW Framework: Find Â· Leverage Â· Optimize Â· Win
 
 FLOW is an evidence-led SEO operating model built for the AI-search era. Claude SEO
 integrates the FLOW prompt library (41 prompts across 5 stages) so every analysis can
 be driven by structured, evidence-backed AI prompts rather than improvised queries.
 
-> Framework and prompts © Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
+> Framework and prompts Â© Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
 
 **Runtime context:** Load `references/flow-framework.md` on every `/seo flow` activation.
 Load prompt files on demand, only for the stage the user requests.
@@ -82,7 +82,7 @@ Load prompt files on demand, only for the stage the user requests.
 2. Display the full index: all 41 prompts with stage, name, trigger conditions
 
 ### On `/seo flow sync`
-1. Run: `claude-seo run sync_flow.py`
+1. Run: `antigravity-seo run sync_flow.py`
 2. Display the JSON summary (files added, updated, unchanged)
 3. Show attribution notice after sync completes
 
@@ -92,9 +92,9 @@ Load prompt files on demand, only for the stage the user requests.
 
 The optimize stage has 21 prompts. Dumping all 21 is noise. Select by priority:
 
-1. **Industry vertical** (SaaS → on-page + technical; local → citations + GBP; publisher → E-E-A-T + freshness)
-2. **Prior skill output** (seo-technical flagged crawl issues → technical optimize prompts; seo-content flagged E-E-A-T gaps → content optimize prompts)
-3. **URL signals** (product pages → conversion; blog → freshness + authority)
+1. **Industry vertical** (SaaS â†’ on-page + technical; local â†’ citations + GBP; publisher â†’ E-E-A-T + freshness)
+2. **Prior skill output** (seo-technical flagged crawl issues â†’ technical optimize prompts; seo-content flagged E-E-A-T gaps â†’ content optimize prompts)
+3. **URL signals** (product pages â†’ conversion; blog â†’ freshness + authority)
 
 Always surface exactly 2-3 prompts. State which prompts you chose and why.
 
@@ -119,7 +119,7 @@ Load on-demand, do NOT load all at startup:
 Every `/seo flow` activation (any sub-command) outputs before analysis:
 
 ```
-Framework and prompts © Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
+Framework and prompts Â© Daniel Agrici, CC BY 4.0: github.com/AgriciDaniel/flow
 ```
 
 Do not omit or modify the attribution.
@@ -134,3 +134,4 @@ Do not omit or modify the attribution.
 | Prompt file missing | "Run `/seo flow sync` to pull the latest prompts from the FLOW repo." |
 | `sync_flow.py` network error | Display the script's stderr. Check rate limits: `gh api rate_limit`. |
 | `sync_flow.py` auth error | Run `gh auth login` then retry. |
+

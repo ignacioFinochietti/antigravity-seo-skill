@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-geo
 description: >
   Optimize content for AI Overviews (formerly SGE), ChatGPT web search,
@@ -175,7 +175,7 @@ Check `robots.txt` for these AI crawlers:
 
 ## llms.txt Standard
 
-Read `references/llmstxt-evidence.md` for the primary-source evidence (Mueller, Illyes, SE Ranking 300k-domain study, OtterlyAI server-log audit) on why `/llms.txt` is not currently a citation lever for major AI search systems. claude-seo reports presence but assigns no citation-ranking weight.
+Read `references/llmstxt-evidence.md` for the primary-source evidence (Mueller, Illyes, SE Ranking 300k-domain study, OtterlyAI server-log audit) on why `/llms.txt` is not currently a citation lever for major AI search systems. antigravity-seo reports presence but assigns no citation-ranking weight.
 
 > **Google now states this explicitly.** Google's AI optimization guide, introduced
 > 2026-05-15 and clarified 2026-06-15, says `llms.txt` and other AI-text files are
@@ -238,7 +238,7 @@ New standard (December 2025) for machine-readable AI licensing terms.
 >
 > **UX is now unified, surfaces still distinct.** At Google I/O 2026 (2026-05-19)
 > Google merged AI Overviews and AI Mode into "one seamless AI Search experience"
-> (question → AI Overview → follow-up in AI Mode) with a new intelligent Search
+> (question â†’ AI Overview â†’ follow-up in AI Mode) with a new intelligent Search
 > box. The *experience* is one flow, but the two citation engines remain
 > technically distinct (different models/link sets), keep scoring both.
 
@@ -323,3 +323,4 @@ If DataForSEO MCP tools are available, use `ai_optimization_chat_gpt_scraper` to
 ## FLOW Framework Integration
 
 For prompt-guided AI content optimization, use `/seo flow optimize <url>`, FLOW's 21 optimize-stage prompts complement GEO's citability and structure analysis with evidence-led AI prompts.
+

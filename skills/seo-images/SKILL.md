@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-images
 description: >
   Image optimization analysis for SEO and performance. Checks alt text, file
@@ -106,7 +106,7 @@ Third-party reporting and Wikipedia describe a Rust-based JPEG XL decoder as shi
 
 #### Detected lazy-loader methods (`lazy_method` field)
 
-`claude-seo run parse_html.py` classifies each image's lazy-loading mechanism via the
+`antigravity-seo run parse_html.py` classifies each image's lazy-loading mechanism via the
 `lazy_method` field on every image entry. Five values:
 
 | `lazy_method` | Signal detected | Common stack |
@@ -172,11 +172,11 @@ Add `decoding="async"` to non-LCP images to prevent image decoding from blocking
 | Metric | Status | Count |
 |--------|--------|-------|
 | Total Images | - | XX |
-| Missing Alt Text | ❌ | XX |
-| Oversized (>200KB) | ⚠️ | XX |
-| Wrong Format | ⚠️ | XX |
-| No Dimensions | ⚠️ | XX |
-| Not Lazy Loaded | ⚠️ | XX |
+| Missing Alt Text | âŒ | XX |
+| Oversized (>200KB) | âš ï¸ | XX |
+| Wrong Format | âš ï¸ | XX |
+| No Dimensions | âš ï¸ | XX |
+| Not Lazy Loaded | âš ï¸ | XX |
 
 ### Prioritized Optimization List
 
@@ -321,13 +321,13 @@ https://support.google.com/merchants/answer/14743464
 
 ```bash
 # Audit a directory for the IPTC label (counts: missing, ai, captured, etc.)
-claude-seo run iptc_ai_label.py audit ./images/ --json
+antigravity-seo run iptc_ai_label.py audit ./images/ --json
 
 # Audit a single image
-claude-seo run iptc_ai_label.py audit ./hero.webp --json
+antigravity-seo run iptc_ai_label.py audit ./hero.webp --json
 
 # Inject the AI label into an image
-claude-seo run iptc_ai_label.py inject ./ai-hero.webp \
+antigravity-seo run iptc_ai_label.py inject ./ai-hero.webp \
     --source-type trainedAlgorithmicMedia
 
 # Other vocabulary values:
@@ -432,3 +432,4 @@ For maximum image SEO, run this pipeline on each image:
 | exiftool not installed | Fall back to ImageMagick for metadata. Recommend: `sudo apt install libimage-exiftool-perl` |
 | cwebp not installed | Fall back to ImageMagick or FFmpeg for WebP conversion. Recommend: `sudo apt install webp` |
 | DataForSEO MCP not available | Skip Image SERP Analysis section. Note extension is not installed. |
+

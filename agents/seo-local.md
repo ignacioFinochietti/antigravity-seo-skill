@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-local
 description: Local SEO specialist. Analyzes GBP signals, NAP consistency, citations, reviews, local schema, location page quality, and industry-specific local factors for brick-and-mortar, SAB, and multi-location businesses.
 model: sonnet
@@ -79,7 +79,7 @@ Provide a structured report with:
 
 ## Fetching pages (v2.0.0)
 
-Use `claude-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes full `raw_content`, `content`, `extracted_text`, `is_spa`, and `publication_date`; use `--max-text` only when explicit bounded output is needed. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
+Use `antigravity-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes full `raw_content`, `content`, `extracted_text`, `is_spa`, and `publication_date`; use `--max-text` only when explicit bounded output is needed. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
 
 Map embeds, GBP widgets, and review carousels are commonly injected client-side. When auditing local pages on JS-heavy sites prefer `--mode always` so the audit reflects what users (and Google's crawler) actually see post-render.
 
@@ -88,3 +88,4 @@ Map embeds, GBP widgets, and review carousels are commonly injected client-side.
 If `output_dir` is provided by the audit orchestrator, write:
 - `output_dir/findings/local.md`: GBP, NAP, reviews, local schema, citation, and location-page findings
 - Structured JSON-compatible findings for `audit-data.json` under the Local SEO category
+

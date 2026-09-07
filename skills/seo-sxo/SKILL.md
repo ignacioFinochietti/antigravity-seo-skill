@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-sxo
 description: >
   Search Experience Optimization: reads Google SERPs backwards to detect page-type
@@ -43,8 +43,8 @@ well-optimized it is.
 
 ### Step 1: Target Acquisition
 
-1. Fetch the target URL via `claude-seo run render_page.py <URL> --mode auto` (SPA-aware and SSRF-safe)
-2. Parse with `claude-seo run parse_html.py <URL>` to extract: title, H1, meta description,
+1. Fetch the target URL via `antigravity-seo run render_page.py <URL> --mode auto` (SPA-aware and SSRF-safe)
+2. Parse with `antigravity-seo run parse_html.py <URL>` to extract: title, H1, meta description,
    headings hierarchy, word count, schema markup, CTAs, media elements
 3. If no keyword provided, extract primary keyword from title tag + H1 overlap
 4. Validate keyword is non-empty before proceeding
@@ -244,7 +244,7 @@ The SXO score is **separate** from the main SEO Health Score.
 ## Quality Checklist
 
 Before delivering results, verify:
-- [ ] Target URL was fetched via `claude-seo run render_page.py <URL> --mode auto` (not raw curl/fetch)
+- [ ] Target URL was fetched via `antigravity-seo run render_page.py <URL> --mode auto` (not raw curl/fetch)
 - [ ] Page type classification uses taxonomy from references
 - [ ] At least 5 SERP results were analyzed
 - [ ] User stories cite specific SERP signals as evidence
@@ -252,3 +252,4 @@ Before delivering results, verify:
 - [ ] SXO score is clearly labeled as separate from SEO Health Score
 - [ ] Limitations section is present and honest
 - [ ] Cross-skill recommendations are included where relevant
+

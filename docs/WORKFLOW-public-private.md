@@ -1,6 +1,6 @@
-# Public + private repo workflow
+﻿# Public + private repo workflow
 
-claude-seo is mirrored across two GitHub remotes. This document is the
+antigravity-seo is mirrored across two GitHub remotes. This document is the
 canonical reference for how work flows between them.
 
 Release evidence: [v2.2.5 final verification](FINAL-VERIFICATION-v2.2.5-2026-08-26.md).
@@ -10,12 +10,12 @@ Release evidence: [v2.2.5 final verification](FINAL-VERIFICATION-v2.2.5-2026-08-
 ```
                  REVIEWED RELEASE WORK
                 (isolated clean worktree)
-                       │
-        ┌──────────────┼──────────────┐
-        │                             │
-        ▼                             ▼
+                       â”‚
+        â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+        â”‚                             â”‚
+        â–¼                             â–¼
   origin (public)              aimh (private)
-  AgriciDaniel/claude-seo      AI-Marketing-Hub/claude-seo
+  AgriciDaniel/antigravity-seo      AI-Marketing-Hub/antigravity-seo
   - Release destination        - Daily development
   - main = released history    - main = reviewed private release history
   - Tags = release history     - v2 = active development
@@ -58,7 +58,7 @@ test gates. No need to touch the public remote for routine work.
 7. Create the GitHub release on the public repository only.
    ```bash
    gh release create v2.0.1 \
-     --repo AgriciDaniel/claude-seo \
+     --repo AgriciDaniel/antigravity-seo \
      --notes-from-tag \
      --verify-tag
    ```
@@ -75,7 +75,7 @@ repository. Add the private remote once if it is absent:
 
 ```bash
 git remote get-url aimh >/dev/null 2>&1 || \
-  git remote add aimh https://github.com/AI-Marketing-Hub/claude-seo.git
+  git remote add aimh https://github.com/AI-Marketing-Hub/antigravity-seo.git
 ```
 
 ```bash
@@ -102,7 +102,7 @@ The repositories are intentionally not byte-identical:
 
 | File | `aimh` (private) | `origin` (public) |
 |---|---|---|
-| `.claude-plugin/marketplace.json` `name` | `ai-marketing-hub-claude-seo` | `agricidaniel-claude-seo` |
+| `.claude-plugin/marketplace.json` `name` | `ai-marketing-hub-antigravity-seo` | `agricidaniel-antigravity-seo` |
 | `.claude-plugin/marketplace.json` `owner.name` | `AI Marketing Hub` | `AgriciDaniel` |
 
 The private repository can also retain private-only `research/` reports, Pro
@@ -143,12 +143,13 @@ upgrade.
 - Public `main` includes reviewed maintenance through `3344796` and has no
   public `v2` branch.
 - The private sync preserves private-only research and the
-  `ai-marketing-hub-claude-seo` marketplace identity.
+  `ai-marketing-hub-antigravity-seo` marketplace identity.
 
 ## Email-privacy caveat (one-time)
 
 Two very old tags (`v1.2.0`, `v1.4.0`) could not be pushed to the
 private repo because the underlying commits use a private email address
 that GitHub now blocks. These tags remain available on `origin` only.
-Not a regression — those releases shipped on public and are reachable
+Not a regression â€” those releases shipped on public and are reachable
 there.
+

@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-drift
 description: >
   SEO drift analysis agent. Captures baselines of SEO-critical page elements and
@@ -17,10 +17,10 @@ elements by comparing current page state against stored baselines.
 ## Tools
 
 All page fetching goes through the project's existing scripts with SSRF protection:
-- `claude-seo run drift_baseline.py <url>` -- capture a new baseline
-- `claude-seo run drift_compare.py <url>` -- compare current state to baseline
-- `claude-seo run drift_history.py <url>` -- show change history
-- `claude-seo run drift_report.py <file> --output report.html` -- generate HTML report
+- `antigravity-seo run drift_baseline.py <url>` -- capture a new baseline
+- `antigravity-seo run drift_compare.py <url>` -- compare current state to baseline
+- `antigravity-seo run drift_history.py <url>` -- show change history
+- `antigravity-seo run drift_report.py <file> --output report.html` -- generate HTML report
 
 Never use curl, wget, or raw HTTP requests. All fetching is handled by
 the bundled `fetch_page.py` module internally, which validates URLs against private/loopback
@@ -63,3 +63,4 @@ For comparisons, present:
 If `output_dir` is provided by the audit orchestrator, write:
 - `output_dir/findings/drift.md`: baseline availability, triggered rules, old/new values, and regression findings
 - Structured JSON-compatible findings for `audit-data.json` under the SEO Drift category
+

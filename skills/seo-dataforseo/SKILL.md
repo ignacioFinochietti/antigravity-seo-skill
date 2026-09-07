@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-dataforseo
 description: >
   Live SEO data via DataForSEO MCP server: SERP analysis, keyword research
@@ -48,22 +48,22 @@ DataForSEO charges per API call. Be efficient:
 
 **Before every DataForSEO MCP call**, run cost estimation:
 ```
-claude-seo run dataforseo_costs.py check <endpoint> [--count N]
+antigravity-seo run dataforseo_costs.py check <endpoint> [--count N]
 ```
 
-- If `"status": "approved"` → proceed with the API call
-- If `"status": "needs_approval"` → show the cost estimate to the user and ask for confirmation before proceeding
-- If `"status": "blocked"` → inform the user that the daily budget limit would be exceeded; do NOT proceed
+- If `"status": "approved"` â†’ proceed with the API call
+- If `"status": "needs_approval"` â†’ show the cost estimate to the user and ask for confirmation before proceeding
+- If `"status": "blocked"` â†’ inform the user that the daily budget limit would be exceeded; do NOT proceed
 
 **After each API call completes**, log the cost:
 ```
-claude-seo run dataforseo_costs.py log <endpoint> <actual_cost>
+antigravity-seo run dataforseo_costs.py log <endpoint> <actual_cost>
 ```
 
 **User commands for cost management:**
-- `/seo dataforseo costs today` → show today's spending breakdown
-- `/seo dataforseo costs summary` → show 7-day spending history
-- `/seo dataforseo costs config --mode threshold --threshold 0.50` → configure approval mode
+- `/seo dataforseo costs today` â†’ show today's spending breakdown
+- `/seo dataforseo costs summary` â†’ show 7-day spending history
+- `/seo dataforseo costs config --mode threshold --threshold 0.50` â†’ configure approval mode
 
 Load `references/cost-tiers.md` for the full pricing table, budget presets, and cost reduction tips.
 
@@ -373,7 +373,7 @@ Additional DataForSEO MCP tools are available for internal use but do not have d
 
 ## Cross-Skill Integration
 
-When DataForSEO MCP tools are available, other claude-seo skills can leverage live data:
+When DataForSEO MCP tools are available, other antigravity-seo skills can leverage live data:
 
 - **seo-audit**:Spawn `seo-dataforseo` agent for real SERP, backlink, on-page, and listings data
 - **seo-technical**:Use `on_page_instant_pages` / `on_page_lighthouse` for real crawl data, `domain_analytics_technologies_domain_technologies` for stack detection
@@ -393,9 +393,10 @@ When DataForSEO MCP tools are available, other claude-seo skills can leverage li
 
 ## Output Formatting
 
-Match existing claude-seo output patterns:
+Match existing antigravity-seo output patterns:
 - Use tables for comparative data
 - Prioritize issues as Critical > High > Medium > Low
 - Include specific, actionable recommendations
 - Show scores as XX/100 where applicable
 - Note data source as "DataForSEO (live)" to distinguish from static analysis
+

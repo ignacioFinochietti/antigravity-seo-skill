@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-content
 description: Content quality reviewer. Evaluates E-E-A-T signals, readability, content depth, AI citation readiness, and thin content detection.
 model: sonnet
@@ -67,7 +67,7 @@ Provide:
 
 ## Fetching pages (v2.0.0)
 
-Use `claude-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `is_spa`, complete `extracted_text`, and `publication_date`; use `--output rendered.html` for the full HTML. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
+Use `antigravity-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `is_spa`, complete `extracted_text`, and `publication_date`; use `--output rendered.html` for the full HTML. SSRF and DNS-rebinding protection live in the bundled `url_safety.py` module, never call `requests.get` directly on user-supplied URLs.
 
 ## Persistence Contract
 
@@ -77,3 +77,4 @@ If `output_dir` is provided by the audit orchestrator, write:
 - Structured JSON-compatible findings for `audit-data.json` under the Content Quality category
 
 E-E-A-T scoring should run against `extracted_text` rather than `content`, trafilatura strips navigation chrome, footers, and cookie banners, so author bios and main-content trust signals score correctly without dilution.
+

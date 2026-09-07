@@ -1,4 +1,4 @@
-# Migrating from claude-seo v1.x to v2.0.0
+﻿# Migrating from antigravity-seo v1.x to v2.0.0
 
 v2 is **backward-compatible by design**. Every v1.x CLI invocation, every
 script signature, and every skill command still works. The breaking
@@ -15,11 +15,11 @@ changes are limited to two narrow surfaces:
    these in `<script type="application/ld+json">` blocks will see a new
    Critical row in the audit output.
 
-Everything else is additive — new commands, new scripts, new reference
+Everything else is additive â€” new commands, new scripts, new reference
 files, new extensions. Existing audit reports will look slightly fuller
 but use exactly the same overall structure.
 
-This guide covers the v1.x → v2.0.0 jump only; the v2.1.0 through v2.2.5
+This guide covers the v1.x â†’ v2.0.0 jump only; the v2.1.0 through v2.2.5
 releases are documented in [../CHANGELOG.md](../CHANGELOG.md), and the
 suite is now at 410 tests.
 
@@ -49,7 +49,7 @@ suite is now at 410 tests.
 | `python3 scripts/content_verify.py` | Claim extraction + citation-gap detection |
 | `python3 scripts/domain_history.py` | WHOIS-driven expired-domain abuse check |
 | `python3 scripts/seo_updates.py` | Primary-source Google updates changelog |
-| `data/google-updates.json` | 18 confirmed Google updates 2024-03 → 2025-12 |
+| `data/google-updates.json` | 18 confirmed Google updates 2024-03 â†’ 2025-12 |
 
 ### Technical / CWV depth (Phase C)
 
@@ -86,7 +86,7 @@ suite is now at 410 tests.
 |---|---|
 | `python3 scripts/gbp_deprecation_lint.py` | Detects retired GBP chat; treats `.business.site` as unresolved and Q&A as review-only |
 | `skills/seo-google/references/dma-consent-mode-v2.md` | EU CTR diagnostic + softened cookieless framing |
-| `skills/seo-hreflang/references/machine-translation-qa.md` | Untranslated-MT detection per Jan 2025 QRG §4.6.5 |
+| `skills/seo-hreflang/references/machine-translation-qa.md` | Untranslated-MT detection per Jan 2025 QRG Â§4.6.5 |
 
 ### Multi-platform portability (Phase G)
 
@@ -105,11 +105,11 @@ suite is now at 410 tests.
 
 ### Hardening
 
-- **DNS rebinding via redirect target** (HIGH severity) — closed.
-- **Obfuscated IPv4 bypass** in `validate_url` (HIGH) — closed.
-- **FQDN trailing-dot bypass** of metadata-endpoint blocklist (HIGH) — closed.
-- **IPv6 blind spot in Playwright route handler** (MEDIUM) — closed.
-- **OAuth file-permission TOCTOU** (LOW) — closed.
+- **DNS rebinding via redirect target** (HIGH severity) â€” closed.
+- **Obfuscated IPv4 bypass** in `validate_url` (HIGH) â€” closed.
+- **FQDN trailing-dot bypass** of metadata-endpoint blocklist (HIGH) â€” closed.
+- **IPv6 blind spot in Playwright route handler** (MEDIUM) â€” closed.
+- **OAuth file-permission TOCTOU** (LOW) â€” closed.
 - **Unsigned install scripts:** partially closed; release manifest
   tooling shipped in v2.0.0, install.sh integration tracked for v2.3.
 
@@ -143,7 +143,7 @@ If your generated JSON-LD includes `@type: ClaimReview`, `Vehicle`,
 **Action:** consult `skills/seo-schema/references/deprecated-types-2024-2026.md`
 for the recommended replacement per type. If you need to keep the
 markup for non-Google purposes, you can suppress the finding by removing
-the type from the validator's deprecated list (not recommended — the
+the type from the validator's deprecated list (not recommended â€” the
 rich result is dead).
 
 ## Things that were going to break but didn't
@@ -157,7 +157,7 @@ We considered but ultimately did **not** break the following:
   CLI layer only; the underlying function stays raw-mode by default.
 - `capture_screenshot()` API. Pre-flight is upgraded but the call
   signature and result dict are unchanged.
-- All v1.x command names (`/seo audit`, `/seo content`, …). Every
+- All v1.x command names (`/seo audit`, `/seo content`, â€¦). Every
   one of them works in v2.
 
 ## How to upgrade
@@ -166,7 +166,7 @@ Caution: Prefer downloading, inspecting, then running remote scripts; the pipe-t
 
 ```bash
 # Pull v2.0.0
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/antigravity-seo/main/install.sh | bash
 
 # Verify the new requirements pin landed
 pip install -r requirements.txt
@@ -179,8 +179,8 @@ python3 -m pytest tests/test_manifest_consistency.py -v
 ```
 
 That's it. The first time you run anything that touches
-`~/.config/claude-seo/oauth-token.json`, v2 will silently re-chmod it
-to `0o600` — no user action required.
+`~/.config/antigravity-seo/oauth-token.json`, v2 will silently re-chmod it
+to `0o600` â€” no user action required.
 
 ## Test coverage
 
@@ -189,15 +189,16 @@ to `0o600` — no user action required.
 | Manifest consistency | 13 | 13 |
 | Lazy detection | 11 | 11 |
 | Sync FLOW | 15 | 15 |
-| **`url_safety` (new)** | — | **83** |
-| **`render_page` (new)** | — | **27** |
-| **Content quality (new)** | — | **25** |
-| **Technical depth (new)** | — | **17** |
-| **Schema v2 (new)** | — | **17** |
-| **Parasite risk + extensions (new)** | — | **22** |
-| **GBP lint + polish (new)** | — | **8** |
-| **Portability (new)** | — | **10** |
+| **`url_safety` (new)** | â€” | **83** |
+| **`render_page` (new)** | â€” | **27** |
+| **Content quality (new)** | â€” | **25** |
+| **Technical depth (new)** | â€” | **17** |
+| **Schema v2 (new)** | â€” | **17** |
+| **Parasite risk + extensions (new)** | â€” | **22** |
+| **GBP lint + polish (new)** | â€” | **8** |
+| **Portability (new)** | â€” | **10** |
 | **Total** | **39** | **248** |
 
-v2 adds 209 new test cases (5.4× the v1 baseline) covering every new
+v2 adds 209 new test cases (5.4Ã— the v1 baseline) covering every new
 function's failure modes plus every known SSRF bypass class.
+
