@@ -2,23 +2,16 @@
 
 # Antigravity SEO: SEO Skill & Suite for Google Antigravity
 
-**Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Antigravity SEO](https://github.com/AgriciDaniel/antigravity-seo-skill)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
+**Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Claude SEO](https://github.com/AgriciDaniel/claude-seo)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
 
-[![CI](https://github.com/AgriciDaniel/antigravity-seo-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/AgriciDaniel/antigravity-seo-skill/actions/workflows/ci.yml)
-[![Google Antigravity Skill](https://img.shields.io/badge/Antigravity%20Code-Skill-blue)](https://Antigravity.ai/Antigravity-code)
+[![Google Antigravity Skill](https://img.shields.io/badge/Antigravity-Skill-blue)](https://github.com/ignacioFinochietti/antigravity-seo-skill)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Version](https://img.shields.io/github/v/release/AgriciDaniel/antigravity-seo-skill)](https://github.com/AgriciDaniel/antigravity-seo-skill/releases)
 [![Tests](https://img.shields.io/badge/tests-410%20passing-brightgreen)](tests/)
-[![Community](https://img.shields.io/badge/AI%20Marketing%20Hub-Pro%20community-purple)](https://www.skool.com/ai-marketing-hub-pro)
-
-> **Two versions of this skill.**
-> - ðŸŒ **Public open-source** â†’ [`AgriciDaniel/antigravity-seo-skill`](https://github.com/AgriciDaniel/antigravity-seo-skill): MIT, public releases, no membership. Use this if you want stable + downloadable.
-> - ðŸ”’ **Community private mirror** â†’ [`AI-Marketing-Hub/antigravity-seo-skill`](https://github.com/AI-Marketing-Hub/antigravity-seo-skill): early access to upcoming features and direct collaboration with the [AI Marketing Hub Pro](https://www.skool.com/ai-marketing-hub-pro) community. Requires membership.
 
 ### Why Antigravity SEO
 
 - **AI-search first.** Aligned with [Google's AI Optimization Guide](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide). Question-based citability scoring, primary-source evidence on llms.txt, IPTC `TrainedAlgorithmicMedia` for AI-generated product images, agent-friendly page checks per [web.dev](https://web.dev/).
-- **Parallel execution.** Full site audits spawn up to 15 specialist agents simultaneously. Site-level audits complete in minutes rather than hours.
+- **Parallel execution.** Full site audits spawn specialist agents across categories simultaneously. Site-level audits complete in minutes rather than hours.
 - **Falsifiable, not promotional.** Every recommendation carries the first-principle observation it rests on, its dependency relationships, an explicit "how would we know this failed?" check, and a leading indicator. See [Methodology](#methodology).
 
 ### Real results
@@ -27,21 +20,11 @@
 
 Google Search Console for a site started 23 March 2026 and run on this workflow: total clicks and impressions across its first three months, through 12 June 2026.
 
-> Using Codex instead of Google Antigravity? Use [Codex SEO](https://github.com/AgriciDaniel/codex-seo), the Codex-first port with TOML agents, plugin packaging, deterministic runners, and the same SEO workflow surface.
-
 ## Who this is for
 
-- **SEO agencies running 5+ client sites.** Replace quarterly deep audits with weekly automated runs. Same team capacity, 4Ã— audit cadence, every recommendation comes with a falsifiability check the client can verify.
+- **SEO agencies running 5+ client sites.** Replace quarterly deep audits with weekly automated runs. Same team capacity, 4x audit cadence, every recommendation comes with a falsifiability check the client can verify.
 - **In-house SEO leads at SaaS / publisher / e-commerce companies.** Second-pair-of-eyes before executive reviews. Catches what GSC and Lighthouse hide: schema deprecation, AI-citability gaps, expired-domain heritage risk, parasite-SEO exposure, machine-translation drift.
 - **Freelance SEO consultants.** Anchor day-one client scope with a 15-minute audit and a real 0-100 score. Win the engagement with concrete proof of value before you spend an hour writing the proposal.
-
-![Antigravity SEO /seo command demo in Google Antigravity terminal](screenshots/seo-command-demo.gif)
-
-Run a full audit and watch parallel agents fan out across the site:
-
-![Antigravity SEO /seo audit demo: parallel subagents producing a prioritized action plan](screenshots/seo-audit-demo.gif)
-
-[Watch the full demo on YouTube](https://www.youtube.com/watch?v=COMnNlUakQk)
 
 ## Table of Contents
 
