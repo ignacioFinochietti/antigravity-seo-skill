@@ -70,52 +70,33 @@ Run a full audit and watch parallel agents fan out across the site:
 
 ## Installation
 
-> ℹ️ **Which version are you installing?**
->
-> - **Public open-source (default).** The commands below install from [`AgriciDaniel/claude-seo`](https://github.com/AgriciDaniel/claude-seo) — MIT, public releases, no membership required.
-> - **AI Marketing Hub Pro member?** Install the community version with early access instead: swap `AgriciDaniel/claude-seo` for `AI-Marketing-Hub/claude-seo` and the plugin slug `claude-seo@agricidaniel-claude-seo` for `claude-seo@ai-marketing-hub-claude-seo`. Requires `gh auth login` (or PAT) with access to the `AI-Marketing-Hub` org. If `/plugin marketplace add` 404s, DM in the [Skool community](https://www.skool.com/ai-marketing-hub-pro) to get added.
-
-### Plugin Install (Claude Code 1.0.33+)
-
-The fastest path. One-time marketplace add, then plugin install:
-
-```bash
-/plugin marketplace add AgriciDaniel/claude-seo
-/plugin install claude-seo@agricidaniel-claude-seo
-/seo setup
-```
-
-The explicit setup step creates an isolated Python environment in Claude's
-persistent plugin data and installs Playwright Chromium. Check it at any time
-with `/seo doctor`. No global Python packages or PATH shims are created.
-
-### Manual Install (Unix / macOS / Linux)
-
-```bash
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-bash claude-seo/install.sh
-```
-
-<details>
-<summary>One-liner (curl, review then run)</summary>
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/AgriciDaniel/claude-seo/main/install.sh > install.sh
-cat install.sh        # review before running
-bash install.sh
-rm install.sh
-```
-
-</details>
-
-### Windows (PowerShell)
+### For Google Antigravity (Windows)
 
 ```powershell
-git clone --depth 1 https://github.com/AgriciDaniel/claude-seo.git
-powershell -ExecutionPolicy Bypass -File claude-seo\install.ps1
+git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo.git
+powershell -ExecutionPolicy Bypass -File antigravity-seo\install-antigravity.ps1
 ```
 
-> **Why `git clone` instead of `irm | iex`?** Claude Code's own security guardrails flag `irm ... | iex` as a supply chain risk: downloading and executing remote code without verification. The `git clone` approach lets you inspect `claude-seo\install.ps1` before running it.
+### For Google Antigravity (Unix / macOS / Linux)
+
+```bash
+git clone --depth 1 https://github.com/ignacioFinochietti/antigravity-seo.git
+bash antigravity-seo/install-antigravity.sh
+```
+
+> **What does this do?** It installs all 25 sub-skills and specialist agents into Antigravity's global skill directory (`~/.gemini/config/skills/`), making `/seo` and all its commands directly invocable from any Antigravity conversation.
+
+---
+
+### Claude Code Installation (Original Upstream Compatibility)
+
+```powershell
+# Windows (Claude Code)
+powershell -ExecutionPolicy Bypass -File install.ps1
+
+# Unix / macOS (Claude Code)
+bash install.sh
+```
 
 ## Quick Start
 
