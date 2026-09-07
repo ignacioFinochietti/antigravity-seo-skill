@@ -1,5 +1,3 @@
-![Antigravity SEO cover: a Google Antigravity command palette with /seo audit, schema, geo, content, and backlinks commands over a dark CRT panel](assets/cover.svg)
-
 # Antigravity SEO: SEO Skill & Suite for Google Antigravity
 
 **Antigravity SEO is an open-source SEO analysis skill suite adapted for [Google Antigravity](https://antigravity.google) (forked and adapted from [Claude SEO](https://github.com/AgriciDaniel/claude-seo)).** It runs 25 sub-skills and specialist agents across technical SEO, content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO, e-commerce, and international SEO. Every audit produces a prioritized action plan with testable recommendations grounded in primary-source guidance from Google.
